@@ -1,0 +1,51 @@
+.editStyle {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 70%}
+body	{font-family:Verdana; font-size:75%; color:#000000}
+td	{font-family:Verdana; font-size:75%; color:#000000}
+td.ftext {font-family:Verdana; font-size:55%; color:#7B7B7B;}
+td.pad {font-family:Verdana; font-size:75%; color:#000000; padding:2px; }
+a {font-family:Verdana; color:#0049A4 ;}
+
+.mn {
+	font-family:Verdana;
+	font-size:7 pt;
+	color: #FFFFFF;
+	font-weight:bold;
+	text-decoration:none
+}
+.mn_blk {
+	font-family:Verdana;
+	font-size:7 pt;
+	color: #3D4976;
+	font-weight:bold;
+	text-decoration:none
+}
+.link {font-family:Verdana; color:#0049A4 ; font-weight:bold}
+.link1 {font-family:Verdana; color:#0049A4; font-weight:normal}
+
+.ftext1 {font-family:Verdana; font-size:75%; color:#7B7B7B;}
+.mesgClass {width: 100%;}
+
+.katlev1 {font-family:Verdana; color:#0049A4 ;}
+.ohead {font-family:Verdana; color:#006DF5 ; font-weight:bold;text-decoration:none}
+.dd {margin-left:10px; margin-bottom:10px; margin-top:5px; margin-right:5px}
+.dd1 {margin-left:5px; margin-bottom:10px; margin-top:5px; margin-right:5px}
+.but {font-family:Verdana; font-size:11px; background-color:#FEDC74 ;border-bottom-color : #FFBA00; border-left-color : #FFBA00; border-top-color : #FFBA00; border-right-color: #FFBA00; }
+
+a.news {font-family:Verdana;   color:#000000; text-decoration:none}
+a.news:hover {font-family:Verdana;   color:#0049A4 ; text-decoration:underline}
+
+a.people {font-family:Verdana;   color:#000000; text-decoration:none}
+a.people:hover {font-family:Verdana;   color:#0049A4 ; text-decoration:underline}
+a.people_ignore {font-family:Verdana;   color:#000000; text-decoration: line-through;}
+
+.srol { scrollbar-face-color: #d9d9d9; scrollbar-highlight-color: #f3f3f3; 
+          scrollbar-shadow-color: #f3f3f3;       scrollbar-3dlight-color: #f3f3f3;           scrollbar-arrow-color: #006DF5;      scrollbar-track-color: #f3f3f3;         scrollbar-darkshadow-color: #E0E0E0;
+}
+
+.flat
+{ 
+ border: solid 1 px; border-color: #666666;
+
+}
+a.clsNavigatorHRef{font-family:Verdana; color:#0049A4;}
+td.clsNavigatorPageActual{font-family:Verdana;font-size:75%; color:#000000}

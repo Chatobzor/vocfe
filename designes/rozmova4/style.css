@@ -1,0 +1,73 @@
+body, td
+{
+        font-family: Verdana, Tahoma, Arial;
+        font-size:13px;
+        color:black;
+}
+a,a:visited,a:hover
+{
+        color:black;
+}
+a.jsnavi, a.jsnavi:visited,.jsnavi
+{
+        font-family: Verdana, Arial;
+        font-size:11px;
+        color:#6060ff;
+        font-weight: bold;
+        text-decoration: none;
+}
+.tool_tip {
+ position: absolute;
+ visibility: hidden;
+ border: #000000 1px solid;
+ padding: 3px 3px 3px 3px;
+ background-color: #FCFCD3;
+}
+.jsnavi:hover
+{
+        font-family: Verdana, Arial;
+        font-size:11px;
+        color: blue;
+        font-weight: bold;
+        text-decoration: none;
+}
+
+small
+{
+        font-size:11px;
+        color:#555555;
+}
+.input {  font-family: Verdana, Arial, Helvetica, sans-serif, Tahoma; font-size: 10pt; color: #000000; height: auto; width: auto; border: #98C00B; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+.input_button {  font-family: Verdana, Arial, Helvetica, sans-serif, Tahoma; font-size: 10px; background-color: #7E9B16; color: #FFFFFF; height: auto; width: auto; border: #98C00B; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+h3,.cap
+{
+        font-weight: bold;
+        font-size:16px;
+}
+a.nick, a.nick:visited
+{
+        text-decoration: none;
+}
+a.nick:hover
+{
+        color:#6060ff;
+        text-decoration: none;
+}
+.hs
+{
+        background-color: #dadada;
+}
+.hu
+{
+        background-color: #BDD6A9;
+}
+.ha
+{
+        background-color: #FFB9A1;
+}
+.topic
+{
+        font-size:16px;
+        font-weight:bold;
+        color:#555555;
+}

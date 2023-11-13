@@ -1,8 +1,12 @@
+#images
 items/*
 converts/*
 clans-logos/*
 clans-avatar/*
 photos/*
+top20/*
+
+#data
 data/**/*.dat
 data/**/*.tmp
 data/**/*.user

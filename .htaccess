@@ -1,0 +1,8 @@
+RewriteEngine On
+Options +FollowSymlinks
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^users/([0-9]*)$ /fullinfo.php?user_id=$1 [L]
+RewriteRule ^users/(.*)$ /profiler_rewrite.php?user_to_search=$1 [L]
+RewriteRule ^403$ "" [F]

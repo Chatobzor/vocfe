@@ -1,0 +1,85 @@
+/*
+// 2005-03-21
+// Copyright (c) Art. Lebedev | http://www.artlebedev.ru/
+// Author - Vladimir Tokmakov
+*/
+
+
+div.preframe { width: 95%; padding: 0; overflow: auto; position: relative; }
+div.preframe table.pre { margin: 0; left: 0; }
+.tabsheets,
+.tabsheets dt,
+.tabsheets dd
+{
+margin: 0;
+padding: 0;
+width: auto;
+border: none;
+}
+dl.tabsheets dt,
+dl.tabsheets dd
+{
+background-color: ThreeDFace;
+color: ButtonText;
+border: 1px solid ThreeDFace;
+border-top-color: ThreeDHighlight;
+border-right-color: ThreeDShadow;
+border-bottom-color: ThreeDShadow;
+border-left-color: ThreeDHighlight;
+}
+.tabsheets
+{
+position: relative;
+padding: 0;  /* не изменять */
+height: 99px; /* это для object-inspector.js ищи строку tabsheets- */
+margin-bottom: 10px;
+}
+.tabsheets dt
+{
+float: left;
+padding: 0.2em 1em;
+cursor: default;
+white-space: nowrap;
+margin-top: 0.1em;
+margin-bottom: -0.2em;
+}
+.tabsheets dt.active
+{
+background-color: ButtonHighlight;
+color: ButtonText;
+margin-top: 0;
+padding-bottom: 0.3em;
+}
+.tabsheets dd
+{
+position: absolute;
+width: 100%;
+display: block;
+left: 0;
+margin: 1.6em 0 1em 0;
+padding: 0; /* не изменять */
+}
+.tabsheets dd .reducer
+{
+margin: 1em;
+}
+.tabsheets dd.inactive
+{
+display: none;
+}
+.tabsheets dd.inactive iframe,
+.tabsheets dd.inactive select,
+.tabsheets dd.inactive textarea,
+.tabsheets dd.inactive input
+{
+display: none ! important;
+}
+.tabsheets dd.active
+{
+display: block;
+}
+.tabsheets .reducer
+{
+margin: 1em;
+}
+
