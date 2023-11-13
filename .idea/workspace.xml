@@ -5,161 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="UTF and code style part refactoring">
-      <change afterPath="$PROJECT_DIR$/admin/conv_add.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/conv_edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/copy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/css/admins.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/css/common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/css/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/css/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/css/settings.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/functions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/hash.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/img/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/img/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/img/new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/img/remove.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/img/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/img/user_add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/new_admin/new.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/button.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/del.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/edit.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/first.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/last.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/next.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/prev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/tab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/tab_active.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/tab_bar_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/images/tab_hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/modules/cat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/modules/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/modules/inactive.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/modules/smiles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/smiles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin_conf.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin_conf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/calibrate_guardian.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/calibrate_guardian.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/check_session.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/check_session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/configure.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/configure.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/configure/inc_cfg_daemon.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/conv.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/conv.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/cr.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/daemon.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/daemon_admin.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/error_log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/import.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/import_mysql.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/languages/admin-en.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/languages/admin-en.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/languages/admin-ru.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/languages/admin-ru.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/languages/admin-ua.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/languages/admin-ua.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/navi.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz_question_manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz_question_manage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/rooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/rooms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/shop_cats.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/shop_cats.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/statistic.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/transaction_log.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/transaction_log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/users_reiting.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users_reiting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/welcome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/.libs/mod_voc2.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/.libs/mod_voc2.lai" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/.libs/mod_voc2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/.libs/mod_voc2.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/daemon" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/daemon.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/daemon_bsd.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/daemon_win.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/mod_voc.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/daemon/mod_voc2.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/bold/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/bold/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/bold/remove.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/bold/remove.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/color_nick/backend.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/color_nick/backend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/color_nick/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/color_nick/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/damneds/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/damneds/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/damneds/remove.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/damneds/remove.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/gradient/backend.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/gradient/backend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/gradient/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/gradient/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/gradient/frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/gradient/frontend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/gradient/remove.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/gradient/remove.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/invisible/backend.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/invisible/backend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/invisible/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/invisible/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/invisible/frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/invisible/frontend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/rewards/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/rewards/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/status/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/status/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/item_actions/visible/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/item_actions/visible/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/antiqua.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/baskerville.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/batang.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/bookman.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/calisto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/cambria.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/centaur.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/century.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/chaparral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/constantia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/footlight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/garamond.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/georgia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/goudy_old.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/kozuka.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/lucida.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/minion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/palatino.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/perpetua.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/rockwell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/times.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/fonts/warnock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/kcaptcha.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/kcaptcha_config.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/kcaptcha/util/font_preparer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/robot_get_answers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/engine/files/stat.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/stat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/moder-board/0/2.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/quiz/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/quiz/engine.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/engine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/quiz/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voc.conf" beforeDir="false" afterPath="$PROJECT_DIR$/data/voc.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/board_send.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/board_send.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/common_title.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/common_title.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/fullinfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/fullinfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/menu_ad.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/menu_private.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/menu_private.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/menu_public.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/menu_public.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/navibar.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/navibar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/pass.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/pass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/profile_captcha.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/registration_cell.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/registration_cell.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/remote_rbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/remote_rbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/top.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/top.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/voc.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/voc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designes/rozmova4/voc_popup.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/voc_popup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc_common.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_common.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc_statistic.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_statistic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc_user_class.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_user_class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_writer.php" beforeDir="false" afterPath="$PROJECT_DIR$/js_writer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/gradient/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/gradient/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prices.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiler.php" beforeDir="false" afterPath="$PROJECT_DIR$/profiler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiler_rewrite.php" beforeDir="false" afterPath="$PROJECT_DIR$/profiler_rewrite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_rbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/remote_rbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rules.php" beforeDir="false" afterPath="$PROJECT_DIR$/rules.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender.php" beforeDir="false" afterPath="$PROJECT_DIR$/sender.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcam.php" beforeDir="false" afterPath="$PROJECT_DIR$/webcam.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc_badwords_filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_badwords_filter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc_form_message.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_form_message.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +57,9 @@
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ops/migrations" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -220,7 +71,7 @@
       <updated>1699886789563</updated>
       <workItem from="1699886790780" duration="630000" />
       <workItem from="1699887424147" duration="600000" />
-      <workItem from="1699888038888" duration="8524000" />
+      <workItem from="1699888038888" duration="8744000" />
     </task>
     <task id="LOCAL-00001" summary="Init dicker">
       <option name="closed" value="true" />
@@ -294,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699891191902</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="UTF and code style part refactoring">
+      <option name="closed" value="true" />
+      <created>1699897235304</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699897235304</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
