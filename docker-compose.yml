@@ -1,0 +1,38 @@
+version: "3.2"
+services:
+  php:
+    build: './ops/php/'
+    volumes:
+      - ./:/var/www/html/
+  apache:
+    build: './ops/apache/'
+    depends_on:
+      - php
+      - db
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html/
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: my_secret_pw_shh
+      MYSQL_DATABASE: chat
+      MYSQL_USER: chat
+      MYSQL_PASSWORD: password
+    ports:
+      - "9906:3306"
+    volumes:
+      - ./ops/data/db:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
