@@ -4,8 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="Docker: Changed data path.">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="Deploy VOC BSE MVOC collection">
+      <change afterPath="$PROJECT_DIR$/core/php_migration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/LICENSE0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/configure/inc_cfg_save_voc.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/configure/inc_cfg_save_voc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/languages/admin-en.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/languages/admin-en.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/languages/admin-ru.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/languages/admin-ru.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/languages/admin-ua.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/languages/admin-ua.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/mysql.lib.php3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pgsql.lib.php3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/starter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/voc.conf" beforeDir="false" afterPath="$PROJECT_DIR$/data/voc.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/common_body_end.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/common_body_end.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/registration_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/registration_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/shower.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/shower.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc_common.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_common.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/en.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/en.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/help_en.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/help_en.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/help_ru.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/help_ru.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/help_ua.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/help_ua.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ru.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ru.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ua.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ua.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/rooms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rules.php" beforeDir="false" afterPath="$PROJECT_DIR$/rules.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voc_history.php" beforeDir="false" afterPath="$PROJECT_DIR$/voc_history.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/who.php" beforeDir="false" afterPath="$PROJECT_DIR$/who.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/procoders/projects/own/voc/VOCFE",
+    "last_opened_file_path": "/Users/procoders/projects/own/voc/VOCFE/core",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -47,6 +74,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core" />
+      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -60,7 +89,7 @@
       <updated>1699886789563</updated>
       <workItem from="1699886790780" duration="630000" />
       <workItem from="1699887424147" duration="600000" />
-      <workItem from="1699888038888" duration="1080000" />
+      <workItem from="1699888038888" duration="3090000" />
     </task>
     <task id="LOCAL-00001" summary="Init dicker">
       <option name="closed" value="true" />
@@ -110,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699888746730</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Created Gitignore">
+      <option name="closed" value="true" />
+      <created>1699889158935</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699889158935</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Deploy VOC BSE MVOC collection">
+      <option name="closed" value="true" />
+      <created>1699889253495</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699889253495</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +177,8 @@
     <MESSAGE value="Init" />
     <MESSAGE value="Init docker" />
     <MESSAGE value="Docker: Changed data path." />
-    <option name="LAST_COMMIT_MESSAGE" value="Docker: Changed data path." />
+    <MESSAGE value="Created Gitignore" />
+    <MESSAGE value="Deploy VOC BSE MVOC collection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deploy VOC BSE MVOC collection" />
   </component>
 </project>
