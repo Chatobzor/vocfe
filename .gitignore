@@ -6,6 +6,19 @@ clans-avatar/*
 photos/*
 top20/*
 
+Thumbs.db
+.DS_Store
+.DS_Store?
+.idea/*
+/nbproject
+
+# temp or db files
+*.dat
+*.pid
+*.json
+*.tmp
+*.log
+
 #data
 data/**/*.dat
 data/**/*.tmp
@@ -13,3 +26,4 @@ data/**/*.user
 data/**/*.log
 data/**/*.lock
 data/**/*.pid
+data/**/*.msg

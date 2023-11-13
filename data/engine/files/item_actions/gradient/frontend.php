@@ -207,14 +207,14 @@ function ColorGradientText(strElementName , r1 , g1 , b1 , r2, g2, b2)
         <input type="Hidden" name="session" value="<?=$session?>">
 <table>
         <tr>
-            <td colspan="2"><b>Градиентный цвет текста</b></td>
+            <td colspan="2"><b>Р“СЂР°РґРёРµРЅС‚РЅС‹Р№ С†РІРµС‚ С‚РµРєСЃС‚Р°</b></td>
         </tr>
         <tr>
-            <td colspan="2">(задается 1 раз)</td>
+            <td colspan="2">(Р·Р°РґР°РµС‚СЃСЏ 1 СЂР°Р·)</td>
         </tr>
 
         <tr>
-                <td>Стартовый цвет:</td>
+                <td>РЎС‚Р°СЂС‚РѕРІС‹Р№ С†РІРµС‚:</td>
                 <td><select name="start_color" style="{width:70px;height: 25px;}" onchange="redraw(this.options[this.selectedIndex].style.backgroundColor,end_color.options[end_color.selectedIndex].style.backgroundColor);">
 <?php for($i=0;$i<count($registered_colors);$i++)
 {
@@ -223,7 +223,7 @@ function ColorGradientText(strElementName , r1 , g1 , b1 , r2, g2, b2)
         echo " style=\"background:".$registered_colors[$i][1]."; color:".$registered_colors[$i][1]."\">".$registered_colors[$i][0]."</option>\n";
 }?></select>
                 </td>
-<td>Конечный цвет:</td>
+<td>РљРѕРЅРµС‡РЅС‹Р№ С†РІРµС‚:</td>
                 <td><select name="end_color" style="{width:70px;height: 25px;}" onchange="redraw(start_color.options[start_color.selectedIndex].style.backgroundColor,this.options[this.selectedIndex].style.backgroundColor);">
 <?php for($i=0;$i<count($registered_colors);$i++)
 {
@@ -232,7 +232,7 @@ function ColorGradientText(strElementName , r1 , g1 , b1 , r2, g2, b2)
         echo " style=\"background:".$registered_colors[$i][1]."; color:".$registered_colors[$i][1]."\">".$registered_colors[$i][0]."</option>\n";
 }?></select>
                 </td>
-                <Td id="tested_disp"><strong>Съешь еще этих мягких французских булочек</strong></TD>
+                <Td id="tested_disp"><strong>РЎСЉРµС€СЊ РµС‰Рµ СЌС‚РёС… РјСЏРіРєРёС… С„СЂР°РЅС†СѓР·СЃРєРёС… Р±СѓР»РѕС‡РµРє</strong></TD>
                 <Td><input type="Submit" class="input_button" value="OK"></TD>
         </tr>
 </table>

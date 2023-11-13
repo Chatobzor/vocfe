@@ -11,8 +11,11 @@ if (!defined("_COMMON_")):
     define("CORE_PATH", __DIR__.'/core/');
     define('ADMIN_PATH', __DIR__.'/admin/');
     define('MVOC_PATH', __DIR__.'/mvoc/');
+    define('DEFAULT_CHARSET', 'utf-8');
+    define('VERSION', file_get_contents(DATA_PATH . 'version.dat'));
 
     $data_path = DATA_PATH;
+    $file_path = FILE_PATH;
 
     require_once CORE_PATH . "php_migration.php";
 
@@ -71,7 +74,7 @@ if (!defined("_COMMON_")):
                 }
                 break;
             case E_USER_ERROR:
-                echo "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1251\">\n";
+                echo "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=".DEFAULT_CHARSET."\">\n";
                 echo "<center><table border=\"0\"width=\"80%\" cellpadding=\"6\" cellspacing=\"0\">";
                 echo "<tr><td bgcolor=\"red\" ><span style=\"color:white; font-weight: bold; font-size:18px; font-family: Arial, Verdana\">VOC++ -- Fatal error</span></td></tr>";
 
@@ -103,97 +106,12 @@ if (!defined("_COMMON_")):
 
     set_error_handler("my_err_h");
 
-//pathin'
     ini_set('register_globals', 'off');
 
-    unset($chat_url);
-    unset($images_url);
-    unset($daemon_type);
-    unset($daemon_host);
-    unset($daemon_port);
-    unset($daemon_listen);
-    unset($modvoc_socket);
-    unset($locale);
-    unset($shm_mess_id);
-    unset($shm_users_id);
-    unset($engine);
-    unset($long_life_data_engine);
-    unset($mysql_server);
-    unset($mysql_user);
-    unset($mysql_password);
-    unset($mysql_db);
-    unset($mysql_db);
-    unset($mysql_table_prefix);
-    unset($open_chat);
-    unset($enable_gzip);
-    unset($enable_reiting);
-    unset($admin_mail);
-    unset($max_mailbox_size);
-    unset($disconnect_time);
-    unset($history_size);
-    unset($history_size_shower);
-    unset($max_photo_size);
-    unset($max_photo_width);
-    unset($max_photo_height);
-    unset($max_avatar_size);
-    unset($max_avatar_width);
-    unset($max_avatar_height);
-    unset($max_connect);
-    unset($max_from_ip);
-    unset($max_cap_letters);
-    unset($time_offset);
-    unset($max_images);
-    unset($flood_protection);
-    unset($flood_time);
-    unset($flood_in_last);
-    unset($md5_salt);
-    unset($nick_min_length);
-    unset($nick_max_length);
-    unset($nick_available_chars);
-    unset($current_to_canon);
-    unset($club_mode);
-    unset($impro_registration);
-    unset($registration_mailconfirm);
-    unset($max_per_mail);
-    unset($mess_stat);
-    unset($web_indicator);
-    unset($logging_messages);
-    unset($logging_ban);
-    unset($allow_pics);
-    unset($allow_priv_pics);
-    unset($pics_maxsize);
-    unset($pics_maxh);
-    unset($pics_maxw);
-    unset($vocplus_useguardian);
-    unset($vocplus_guardian_dellogs);
-    unset($language);
-    unset($charset);
-    unset($default_design);
-    unset($keep_whisper);
-    unset($message_format);
-    unset($message_fromme);
-    unset($private_message);
-    unset($private_message_fromme);
-    unset($private_hidden);
-    unset($nick_highlight_before);
-    unset($nick_highlight_after);
-    unset($str_w_n_before);
-    unset($str_w_n_after);
-    unset($colorize_nicks);
-    unset($priv_frame);
-    unset($allow_multiply);
-    unset($enabled_b_style);
-    unset($enabled_i_style);
-    unset($enabled_u_style);
-    unset($designes);
-    unset($allowed_langs);
-
-#loading parameters from config file
     if (!($conf_content = implode("", file(DATA_PATH."voc.conf")))) {
         trigger_error("Cannot open voc.conf file, please check your DATA PATH parameter", E_USER_ERROR);
     }
     eval($conf_content);
-#time-offset
 
 //images empty fix
     if (trim($images_url) == "") {
@@ -623,9 +541,6 @@ if (!defined("_COMMON_")):
 
     function dd()
     {
-        if (!IS_GOD) {
-            return;
-        }
         $bugtrace = debug_backtrace();
 
         echo '<pre><b style="color:#701e22">--- '.$bugtrace[0]['file'].' Line: '.$bugtrace[0]['line']." ---</b></pre>";

@@ -1,0 +1,27 @@
+body		{ color: #525252; font-family: Verdana, sans-serif; font-size: 11px; margin: 0px; padding: 0px; background: #ffffff; }
+table		{ border: 0px; }
+td		{ color: #5b645b; font-family: Tahoma, sans-serif; font-size: 11px; }
+legend	{ cursor:default; color: blue; font-size: 10px; font-weight: bold; }
+fieldset	{ margin:10px; }
+
+a		{ color: #5b645b; font-family: Tahoma, sans-serif; font-size: 12px; text-decoration:none; }
+a:hover	{ color: #4176b3; text-decoration:none; }
+
+.input    { color: #5b645b; font-family: Tahoma, sans-serif; font-size: 11px; border: 1px solid #7d9eba; background: #ffffff; }
+
+td.head				{ background:#eeeeee; border-bottom:1px solid #dbdbdb; padding:5px; font-size:18px; font-family:Arial; font-weight:bold; color:gray; cursor:default; }
+td.tab_bar_bg		{ background: url(images/tab_bar_bg.png); height:26px; }
+td.menu_btn			{ text-align:center; height:20px; width:130px; background: url(images/tab.png) no-repeat; cursor:pointer; }
+td.menu_btn_hl		{ text-align:center; height:20px; width:130px; background: url(images/tab_hover.png) no-repeat; cursor:pointer; }
+td.menu_btn_active	{ text-align:center; height:20px; width:130px; background: url(images/tab_active.png) no-repeat; cursor:default; }
+
+div.info		{ display:block; z-index:100; position:absolute; top:200px; left:30%; border:2px solid #eeeeee; background:#fafafa; width:300px; height:200px; overflow:auto; }
+div.hidden	{ display:none; }
+
+input.button_	{ width:80px; color: #7d9eba; font-family: Tahoma, sans-serif; font-size: 11px; border: 1px solid #7d9eba; background: #fafafa; cursor:pointer; }
+input.button	{ width:80px; height:19px; font-weight:bold; color: #2369b9; font-family: Tahoma, sans-serif; font-size: 9px; border: 0px; background: url(images/button.gif) no-repeat; cursor:pointer; }
+
+.tr_normal	{ background:#ffffff; }
+.tr_hover	{ background:#f1f6fa; }
+
+.settings_left	{ cursor:default; padding-left:10px; width:250px; }

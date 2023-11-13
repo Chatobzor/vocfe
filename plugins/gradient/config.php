@@ -1,12 +1,10 @@
 <?php
-//Standard Settings
+
 $VOCPlugin_Name = "Gradient";
-$VOCPlugin_Language = "Ðóññêèé";
-$VOCPlugin_Description = "Ìîäóëü \"Gradient\" ïðåäíàçíà÷åí äëÿ íàïèñàíèÿ òåêñòà ãðàäèåíòîì.";
+$VOCPlugin_Language = "Ð ÑƒÑÑÐºÐ¸Ð¹";
+$VOCPlugin_Description = "ÐœÐ¾Ð´ÑƒÐ»ÑŒ \"Gradient\" Ð¿Ñ€ÐµÐ´Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½ Ð´Ð»Ñ Ð½Ð°Ð¿Ð¸ÑÐ°Ð½Ð¸Ñ Ñ‚ÐµÐºÑÑ‚Ð° Ð³Ñ€Ð°Ð´Ð¸ÐµÐ½Ñ‚Ð¾Ð¼.";
 $VOCPlugin_Version = "0.1";
 $VOCPlugin_Author = "DareDEVIL / MisterX (CreatiFF Design)";
 $VOCPlugin_Enabled = "YES";
 $VOCPlugin_Layout = "NO";
 $VOCPlugin_Eng_Suppoted = "1.0";
-//Custom settings
-?>

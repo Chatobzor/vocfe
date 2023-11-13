@@ -20,29 +20,6 @@ $error = 0;
 
 switch ($step)
 {
-	case 0:
-		echo "<h3>$adm_main_pathes</h3>";
-		echo "<form method=\"post\" action=\"admin_conf.php\">";
-        echo "<input type=\"hidden\" name=\"lang\" value=\"$lang\">";
-		include("configure/inc_cfg_step_1.php");
-
-		echo "<input type=\"submit\" value=\"$adm_save\" class=\"button\">";
-		if (!$error)
-			echo "  <b>$adm_looks_ok</b>";
-		echo "<input type=\"hidden\" name=\"step\" value=\"0\">";
-		echo "<input type=\"hidden\" name=\"save_level\" value =\"1\">";
-		echo "</form>";
-	break; //end of case 0
-	case 1:
-		echo "<h3>$adm_daemon_settings</h3>";
-		echo "<form method=\"post\" action=\"admin_conf.php\">";
-        echo "<input type=\"hidden\" name=\"lang\" value=\"$lang\">";
-		include("configure/inc_cfg_daemon.php");
-		echo "<input type=\"hidden\" name=\"step\" value=\"1\">";
-		echo "<input type=\"hidden\" name=\"save_level\" value =\"2\">";
-		echo "<input type=\"submit\" value=\"$adm_save\" class=\"button\">";
-		echo "</form>";
-	break;
 	case 2:
 		echo "<h3>$adm_engines</h3>";
 		echo "<form method=\"post\" action=\"admin_conf.php\">";

@@ -21,36 +21,6 @@ $error = 0;
 
 switch ($step)
 {
-        case 0:
-                echo "<h3><span style=\"{background-color:#666666;};\">&nbsp;<font color=#FFFFFF>$adm_step 1.</font>&nbsp;</span> $adm_main_pathes.</h3>";
-                echo "<form method=\"post\" action=\"configure.php\">";
-                echo "<input type=hidden name=lang value=\"$lang\">";
-
-                include("configure/inc_cfg_step_1.php");
-
-                echo "<a href=\"javascript:document.forms[0].step.value='0';document.forms[0].submit();\">-<b>$adm_test</b>-</a> | ";
-                if (!$error)
-                        echo "$adm_looks_ok, <a href=\"javascript:document.forms[0].step.value='1';document.forms[0].submit();\"><b>$adm_next --&gt;</b></a>";
-                echo "<input type=\"hidden\" name=\"step\" value=\"\">";
-                echo "<input type=\"hidden\" name=\"save_level\" value =\"1\">";
-                echo "</form>";
-        break; //end of case 0
-        case 1:
-                echo "<h3><span style=\"{background-color:#666666;};\">&nbsp;<font color=#FFFFFF>$adm_step 2.</font>&nbsp;</span> $adm_daemon_settings.</h3>";
-                echo "<form method=\"post\" action=\"configure.php\">";
-        echo "<input type=hidden name=lang value=\"$lang\">";
-
-        include("configure/inc_cfg_daemon.php");
-
-        echo "<input type=\"hidden\" name=\"step\" value=\"\">";
-                echo "<input type=\"hidden\" name=\"save_level\" value =\"2\">";
-                   echo "<input type=hidden name=lang value=\"$lang\">";
-
-        echo "<a href=\"javascript:document.forms[0].step.value='0';document.forms[0].submit();\">&lt;--  <b>$adm_back</b></a> | ";
-                echo "<a href=\"javascript:document.forms[0].step.value='1';document.forms[0].submit();\">-<b>$adm_test</b>-</a> | ";
-                echo "<a href=\"javascript:document.forms[0].step.value='2';document.forms[0].submit();\"><b>$adm_next</b> --&gt;</a>";
-                echo "</form>";
-        break;
         case 2:
                 echo "<h3><span style=\"{background-color:#666666;};\">&nbsp;<font color=#FFFFFF>$adm_step 3.</font>&nbsp;</span> $adm_engines</h3>";
                 echo "<form method=\"post\" action=\"configure.php\">";

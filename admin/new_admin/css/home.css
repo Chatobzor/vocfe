@@ -1,0 +1,50 @@
+body {
+    background:#f9f9f9;
+    padding:5px 20px;
+}
+li {
+    list-style-type:none;
+}
+h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+h2 {
+    margin: 0;
+    font-size:14px;
+    margin-bottom:10px;
+}
+.check-update {
+    float:right;
+}
+.box {
+    box-shadow:2px 2px 5px #555;
+    float:left;
+    background:#fff;
+    border:1px solid #aaa;
+    margin-right:20px;
+    margin-bottom:20px;
+    min-width:185px;
+}
+.box h1 {
+    background:#a0a0a0;
+    text-shadow: 1px 1px 1px #555;
+    color: #fff;
+    font-size:14px;
+    padding:5px 10px;
+    margin:0;
+}
+.box .wrap {
+    padding:15px;
+    overflow-y:auto;
+    height:280px;
+}
+.box .last-user {
+    margin-bottom:3px;
+}
+#chart_div {
+    position:relative;
+    left:-50px;
+}

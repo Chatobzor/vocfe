@@ -5,7 +5,6 @@ set_variable("session");
 set_variable("user_to_search");
 $orig_str = $user_to_search;
 
-if(function_exists("iconv")) $user_to_search = iconv("UTF-8", "WINDOWS-1251", $user_to_search);
 $user_to_search = trim($user_to_search);
 
 if (ereg("[^".$nick_available_chars."]", $user_to_search) or strlen($user_to_search) == 0) {

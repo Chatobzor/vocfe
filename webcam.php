@@ -23,7 +23,7 @@ if($current_user->allow_webcam and
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo DEFAULT_CHARSET; ?>">
 </head>
 <body  bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" alink="#ff6600" link="#8b8b8b" vlink="#000000">
   <table width="100%" height="100%" border="0">

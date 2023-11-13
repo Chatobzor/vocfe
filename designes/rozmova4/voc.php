@@ -504,7 +504,7 @@ with (window.frames['voc_who_visible'].document) {
 open("text/html", "");
 
 write('<html><head><title>UserList</title>\n');
-write('<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">\n');
+write('<meta http-equiv="Content-Type" content="text/html; charset=<?php echo DEFAULT_CHARSET; ?>">\n');
 write('<link rel="STYLESHEET" type="text/css" href="<?php echo $current_design?>style.css">\n');
 write('</head><body bgcolor="#f1f1f1" text="#000000" LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>\n');
 write('<style>td { font-family: Verdana, Arial; font-size: 11px;}</style>\n');
@@ -615,7 +615,7 @@ with (window.frames['voc_rooms'].document) {
                open("text/html", "");
 
                write('<html><head><title>UserList</title>\n');
-               write('<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">\n');
+               write('<meta http-equiv="Content-Type" content="text/html; charset=<?php echo DEFAULT_CHARSET; ?>">\n');
                write('<link rel="STYLESHEET" type="text/css" href="<?php echo $current_design?>style.css">\n');
                write('</head><body bgcolor="#f1f1f1" text="#000000" LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>\n');
                write('<style>td { font-family: Verdana, Arial; font-size: 11px;}</style>\n');
@@ -948,7 +948,7 @@ function buf2Screen() {
 }
 if(isBufferAllowed) window.setTimeout('buf2Screen()',500);
 
-var hdrLine1 = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">\n';
+var hdrLine1 = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=<?php echo DEFAULT_CHARSET; ?>">\n';
 var hdrLine2 = '<style> body, td {font-family: <?=$fonts_arr[intval($current_user->plugin_info["font_face"])] ?>; font-size: <?=$fonts_sizes_arr[intval($current_user->plugin_info["font_size"])] ?>%; color:black;}a,a:visited,a:hover{ color:black;}\n';
 var hdrLine3 = 'small {font-size: 11px; color:#555555;} a.nick, a.nick:visited {text-decoration: none; } a.nick:hover { color:#6060ff; text-decoration: none;}\n';
 var hdrLine4 = '.hs { background-color: #dadada; } .hu { background-color: #BDD6A9;} .ha { background-color: #FFB9A1;} .topic {  font-size:16px; font-weight:bold; color:#555555;}\n';

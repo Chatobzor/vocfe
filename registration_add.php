@@ -31,11 +31,6 @@ if ($impro_registration) {
                 exit;
         }
 }
-/*
-if (get_magic_quotes_gpc())
-{
-        $new_user_name = stripslashes($new_user_name);
-}*/
 $passwd1 = str_replace("\t","",$passwd1);
 $passwd2 =  str_replace("\t","",$passwd2);
 

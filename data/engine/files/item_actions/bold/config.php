@@ -1,4 +1,4 @@
 <?
-$action_title="Æèðíèé ñòèëü";
+$action_title="Ð–Ð¸Ñ€Ð½Ð¸Ð¹ ÑÑ‚Ð¸Ð»ÑŒ";
 $have_config=false;
 ?>

@@ -1,8 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<!-- saved from url=(0028)http://192.168.4.92/chat/rules.php -->
 <HTML>
 <HEAD><TITLE>ПРАВИЛА ЧАТА</TITLE>
-    <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+    <META http-equiv=Content-Type content="text/html; charset=<?php echo DEFAULT_CHARSET; ?>">
     <STYLE>TD {
             FONT-WEIGHT: bold;
             FONT-SIZE: 8pt;

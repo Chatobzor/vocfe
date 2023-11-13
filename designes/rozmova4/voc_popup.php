@@ -435,7 +435,7 @@ var maxSize     = 45;
 var bRedrawPub  = 1;
 var bRedrawPriv = 1;
 
-var hdrLine1 = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">\n';
+var hdrLine1 = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=<?php echo DEFAULT_CHARSET; ?>">\n';
 var hdrLine2 = '<style> body, td {font-family: Verdana, Tahoma, Arial; font-size:13 px; color:black;}a,a:visited,a:hover{ color:black;}\n';
 var hdrLine3 = 'small {font-size:11px; color:#555555;} a.nick, a.nick:visited {text-decoration: none; } a.nick:hover { color:#6060ff; text-decoration: none;}\n';
 var hdrLine4 = '.hs { background-color: #dadada; } .hu { background-color: #BDD6A9;} .ha { background-color: #FFB9A1;} .topic {  font-size:16px; font-weight:bold; color:#555555;}\n';

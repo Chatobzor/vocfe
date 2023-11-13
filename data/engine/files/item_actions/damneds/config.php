@@ -1,5 +1,5 @@
 <?
 //Actions config file
-$action_title="Ïðîêëÿòòÿ";
+$action_title="ÐŸÑ€Ð¾ÐºÐ»ÑÑ‚Ñ‚Ñ";
 $have_config=false;
 ?>

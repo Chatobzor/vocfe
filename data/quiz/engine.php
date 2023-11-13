@@ -13,7 +13,7 @@ if (file_exists('runtime.log')) {
 /************************************************/
 /* Configuration */
 require_once('config.php');
-$path_to_common = $quiz_config['path_to_common']; /* Is required because script MUST be in data-path. Must be slash at the end! */
+$path_to_common = FILE_PATH; /* Is required because script MUST be in data-path. Must be slash at the end! */
 define('MYSQL_SERVER', $quiz_config['db_server']); /* define port or socket here if needed (localhost:3306 or localhost:/tmp/mysqld/mysql.sock for example) */
 define('MYSQL_USER', $quiz_config['db_user']); /* MySQL user */
 define('MYSQL_PASSWORD', $quiz_config['db_pass']); /* MySQL Password */
@@ -22,12 +22,6 @@ define('MYSQL_TABLE_PREFIX', $quiz_config['db_prefix']); /* common table prefix 
 
 require_once($path_to_common.'inc_common.php');
 define('QUIZ_SYSDIR', $data_path.'quiz/');
-
-if(!$quiz_config['lic3_accepted']) {
-	quiz_log_event("Лицензионное соглашение не принято, дальнейшая работа невозможна.");
-	echo 'You cannot  use this script, because license is not accepted. Please open admin-zone and save configuration to accept the license.'.PHP_EOL;
-	exit;
-}
 
 /************************************************/
 /* Disable messages logging */
@@ -64,7 +58,7 @@ if (file_exists($pid_file)) {
 	$one_iteration_time = $quiz_config['tip_timeout']*2+$quiz_config['smoke_timeout'];
 
 	if (time()-$one_iteration_time < $last_action_time) {
-		quiz_log_event("В запуске отказано. Другая копия скрипта ещё работает.");
+		quiz_log_event("Р’ Р·Р°РїСѓСЃРєРµ РѕС‚РєР°Р·Р°РЅРѕ. Р”СЂСѓРіР°СЏ РєРѕРїРёСЏ СЃРєСЂРёРїС‚Р° РµС‰С‘ СЂР°Р±РѕС‚Р°РµС‚.");
 		exit("Process is already runing. Delete ".$pid_file." to stop it.\n");
 	}
 }
@@ -83,11 +77,11 @@ fclose($f);
 /* MySQL Connect */
 define('Q_COMMON', 1);
 if (!mysql_connect(MYSQL_SERVER, MYSQL_USER, MYSQL_PASSWORD)) {
-    quiz_log_event("Не могу подключиться к серверу MySQL. Проверьте настройки. ".mysql_error());
+    quiz_log_event("РќРµ РјРѕРіСѓ РїРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рє СЃРµСЂРІРµСЂСѓ MySQL. РџСЂРѕРІРµСЂСЊС‚Рµ РЅР°СЃС‚СЂРѕР№РєРё. ".mysql_error());
     exit();
 }
 if (!mysql_select_db(MYSQL_DB)) {
-    quiz_log_event("Не могу подключиться к нужной базе данных. Проверьте настройки. ".mysql_error());
+    quiz_log_event("РќРµ РјРѕРіСѓ РїРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рє РЅСѓР¶РЅРѕР№ Р±Р°Р·Рµ РґР°РЅРЅС‹С…. РџСЂРѕРІРµСЂСЊС‚Рµ РЅР°СЃС‚СЂРѕР№РєРё. ".mysql_error());
     exit();
 }
 define("_CONNECT_",1);
@@ -123,7 +117,7 @@ while (1) {
 
     /* Check PID-file */
     if (!file_exists($pid_file) || file_get_contents($pid_file)!=$pid) {
-        quiz_log_event("Не могу найти свой PID-файл... ОМГ! Меня по ходу убили! :(");
+        quiz_log_event("РќРµ РјРѕРіСѓ РЅР°Р№С‚Рё СЃРІРѕР№ PID-С„Р°Р№Р»... РћРњР“! РњРµРЅСЏ РїРѕ С…РѕРґСѓ СѓР±РёР»Рё! :(");
         exit();
     }
 
@@ -138,11 +132,11 @@ while (1) {
 	    mysql_close();
 	    /* Make new connection */
 	    if (!mysql_connect(MYSQL_SERVER, MYSQL_USER, MYSQL_PASSWORD)) {
-	        quiz_log_event("Не могу переподключиться с MySQL-серверу. ".mysql_error());
+	        quiz_log_event("РќРµ РјРѕРіСѓ РїРµСЂРµРїРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ СЃ MySQL-СЃРµСЂРІРµСЂСѓ. ".mysql_error());
 	        exit();
 	    }
 	    if (!mysql_select_db(MYSQL_DB)) {
-	        quiz_log_event("Не могу подключиться к нужной базе данных. ".mysql_error());
+	        quiz_log_event("РќРµ РјРѕРіСѓ РїРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рє РЅСѓР¶РЅРѕР№ Р±Р°Р·Рµ РґР°РЅРЅС‹С…. ".mysql_error());
 	        exit();
 	    }
         if ($quiz_config['mysql_encoding']) {
@@ -360,23 +354,23 @@ function get_question() {
     $anti_google_string_2 = str_replace(array('<', '>', '"', "'"), '', $anti_google_string_2);
     $question = str_replace(' ', '<span style="color:#ffffff; font-size:1px; width:1px; overflow:hidden;">'.$anti_google_string.'</span> <span style="color:#ffffff; font-size:1px; width:1px; overflow:hidden;">'.$anti_google_string_2.' </span>', $question);
     $replaces = array();
-    $replaces[] = array('from' => 'А', 'to' => '&#'.ord('A').';');
-    $replaces[] = array('from' => 'В', 'to' => '&#'.ord('B').';');
-    $replaces[] = array('from' => 'Е', 'to' => '&#'.ord('E').';');
-    $replaces[] = array('from' => 'К', 'to' => '&#'.ord('K').';');
-    $replaces[] = array('from' => 'М', 'to' => '&#'.ord('M').';');
-    $replaces[] = array('from' => 'О', 'to' => '&#'.ord('0').';');
-    $replaces[] = array('from' => 'Р', 'to' => '&#'.ord('P').';');
-    $replaces[] = array('from' => 'С', 'to' => '&#'.ord('C').';');
-    $replaces[] = array('from' => 'Т', 'to' => '&#'.ord('T').';');
-    $replaces[] = array('from' => 'Х', 'to' => '&#'.ord('X').';');
-    $replaces[] = array('from' => 'а', 'to' => '&#'.ord('a').';');
-    $replaces[] = array('from' => 'е', 'to' => '&#'.ord('e').';');
-    $replaces[] = array('from' => 'о', 'to' => '&#'.ord('o').';');
-    $replaces[] = array('from' => 'р', 'to' => '&#'.ord('p').';');
-    $replaces[] = array('from' => 'с', 'to' => '&#'.ord('c').';');
-    $replaces[] = array('from' => 'у', 'to' => '&#'.ord('y').';');
-    $replaces[] = array('from' => 'х', 'to' => '&#'.ord('x').';');
+    $replaces[] = array('from' => 'Рђ', 'to' => '&#'.ord('A').';');
+    $replaces[] = array('from' => 'Р’', 'to' => '&#'.ord('B').';');
+    $replaces[] = array('from' => 'Р•', 'to' => '&#'.ord('E').';');
+    $replaces[] = array('from' => 'Рљ', 'to' => '&#'.ord('K').';');
+    $replaces[] = array('from' => 'Рњ', 'to' => '&#'.ord('M').';');
+    $replaces[] = array('from' => 'Рћ', 'to' => '&#'.ord('0').';');
+    $replaces[] = array('from' => 'Р ', 'to' => '&#'.ord('P').';');
+    $replaces[] = array('from' => 'РЎ', 'to' => '&#'.ord('C').';');
+    $replaces[] = array('from' => 'Рў', 'to' => '&#'.ord('T').';');
+    $replaces[] = array('from' => 'РҐ', 'to' => '&#'.ord('X').';');
+    $replaces[] = array('from' => 'Р°', 'to' => '&#'.ord('a').';');
+    $replaces[] = array('from' => 'Рµ', 'to' => '&#'.ord('e').';');
+    $replaces[] = array('from' => 'Рѕ', 'to' => '&#'.ord('o').';');
+    $replaces[] = array('from' => 'СЂ', 'to' => '&#'.ord('p').';');
+    $replaces[] = array('from' => 'СЃ', 'to' => '&#'.ord('c').';');
+    $replaces[] = array('from' => 'Сѓ', 'to' => '&#'.ord('y').';');
+    $replaces[] = array('from' => 'С…', 'to' => '&#'.ord('x').';');
     //$replaces[] = array('from' => 'a', 'to' => '@');
 
     foreach($replaces as $replace) {

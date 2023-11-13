@@ -346,9 +346,9 @@ function addFaces($mesg) {
                                 $mouth ="frown"; $alt .= "(";}
                         elseif ($mesg[$i] == '|') {
                                 $mouth = "shy"; $alt .= "|";}
-                        elseif ($mesg[$i] == 'P' || $mesg[$i] == 'p' || $mesg[$i] == 'Ð' || $mesg[$i] == 'ð') {
+                        elseif ($mesg[$i] == 'P' || $mesg[$i] == 'p' || $mesg[$i] == 'ï¿½' || $mesg[$i] == 'ï¿½') {
                                 $mouth = "tongue"; $alt .= "P";}
-                        elseif ($mesg[$i] == 'O' || $mesg[$i] == 'o' || $mesg[$i] == 'Î' || $mesg[$i] == 'î') {
+                        elseif ($mesg[$i] == 'O' || $mesg[$i] == 'o' || $mesg[$i] == 'ï¿½' || $mesg[$i] == 'ï¿½') {
                                 $mouth = "amazed"; $alt .= "o";}
                         if ($total_pics<$max_images) {
                                 if (strlen($mouth) != 0) {
@@ -549,9 +549,6 @@ if ($mesg !="") {
        require_once "smiles.php";
        usort($SmTbl, "cmpLen");
 
-         //now it's in inc_common.php
-        //if (get_magic_quotes_gpc()) $mesg = stripslashes($mesg);
-
         if (strlen($mesg)>512) {
                 $error_text .= $w_too_long."<br>\n";
                 $error = 1;
@@ -644,7 +641,6 @@ if ($mesg !="") {
                 $to_robot = strip_tags($mesg);
                 $w_rob_name = $rooms[$room_id]["bot"];
                 if (!$whisper) {
-                    include($ld_engine_path."robot_get_answers.php");
                     include ("quiz.php");
                 }
 

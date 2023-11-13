@@ -1,5 +1,4 @@
-<?
+<?php
 //Actions config file
-$action_title="Íåâèäèì³ñòü";
+$action_title="ÐÐµÐ²Ð¸Ð´Ð¸Ð¼Ð¾ÑÑ‚ÑŒ";
 $have_config=false;
-?>

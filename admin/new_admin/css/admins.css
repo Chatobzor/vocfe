@@ -1,0 +1,38 @@
+body {
+    background:#f9f9f9;
+    padding:5px 20px;
+}
+h2 {
+    text-align:center;
+}
+.text {
+    padding:5px;
+}
+table {
+    background:#fff;
+    border:1px solid #aaa;
+}
+table, tr, td, th {
+    border-collapse:collapse;
+    border:1px solid #aaa;
+}
+th {
+    padding:5px 10px;
+    background:#555;
+    color:#fff;
+    text-shadow:1px 1px 1px #000;
+}
+td {
+    padding:5px;
+}
+input.mini {
+    margin:0;
+    margin-right:3px;
+}
+.btn.mini {
+    padding: 3px 8px;
+    margin: 0;
+}
+.buttons {
+    margin-top:20px;
+}

@@ -1,5 +1,5 @@
 <?
 //Actions config file
-$action_title = "Öâåòíîé íèê / Color nick";
+$action_title = "Ð¦Ð²ÐµÑ‚Ð½Ð¾Ð¹ Ð½Ð¸Ðº / Color nick";
 $have_config=false;
 ?>

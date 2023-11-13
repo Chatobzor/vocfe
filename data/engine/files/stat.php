@@ -17,7 +17,7 @@ function engine_total_users() {
 }
 
 
-function engine_last_registered($num) {
+function engine_last_registered() {
 	global $user_data_file,$file_path;
 	$last_users = array();
 	$fp = fopen($user_data_file, "rb");
