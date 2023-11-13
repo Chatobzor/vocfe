@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="UTF and code style part refactoring">
+    <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="Removed docker db temp storage from git.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc_badwords_filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_badwords_filter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc_form_message.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_form_message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -71,7 +75,7 @@
       <updated>1699886789563</updated>
       <workItem from="1699886790780" duration="630000" />
       <workItem from="1699887424147" duration="600000" />
-      <workItem from="1699888038888" duration="8744000" />
+      <workItem from="1699888038888" duration="9257000" />
     </task>
     <task id="LOCAL-00001" summary="Init dicker">
       <option name="closed" value="true" />
@@ -153,7 +157,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699897235304</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="UTF and code style part refactoring">
+      <option name="closed" value="true" />
+      <created>1699897391751</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699897391751</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Removed docker db temp storage from git.">
+      <option name="closed" value="true" />
+      <created>1699897475596</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699897475596</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +198,7 @@
     <MESSAGE value="Created Gitignore" />
     <MESSAGE value="Deploy VOC BSE MVOC collection" />
     <MESSAGE value="UTF and code style part refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="UTF and code style part refactoring" />
+    <MESSAGE value="Removed docker db temp storage from git." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed docker db temp storage from git." />
   </component>
 </project>
