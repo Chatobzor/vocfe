@@ -1,6 +1,6 @@
 <?php
 
-//MIGRATION to PHP5.6
+// Migration to PHP 5.6
 foreach ($GLOBALS as $k => $v) {
     if ($k[0] == "_") {
         if ($k == "_FILES") {

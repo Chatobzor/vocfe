@@ -1,5 +1,4 @@
 <?php
-/*[COPYRIGHTS]*/
 
 if (!defined('Q_COMMON')) {
     exit('stop');
@@ -223,7 +222,7 @@ if (!TOP_TABLE_EXISTS || !QUESTION_TABLE_EXISTS || !STAT_TABLE_EXISTS) { ?>
     <div style="margin:10px; padding:15px; text-align:center; color:red; font-weight:bold; border:1px solid red; background:#edeff8;">Обнаружены не все необходимые таблицы MySQL!
         <input type="button" class="button" value="создать"
                 onclick="window.location.assign('quiz.php?session=<?= $session ?>&do=create_tables');"></div>
-<?
+    <?
 } ?>
 <!-- Main Configuration -->
 

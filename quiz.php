@@ -7,9 +7,7 @@
 
 if (!defined("_COMMON_")) {
 	/* Direct Request */
-	echo 'VOC++ Quiz Engine v 3.0<br>';
-	echo 'Test build<br>';
-	echo 'Created by ChatMaster';
+	echo 'stop';
 	exit();
 }
 
@@ -106,7 +104,7 @@ if (defined('Q_COMMON')) {
             }
             $room_id = $_room_id;
             //$messages_to_show[] = quiz_prepare_message($message_text, $quiz_config['private_output']);
-            $messages_to_show[] = quiz_prepare_message('Команда <b>!топ</b> временно недоступна. Посмотреть топ пользователей викторины можно <a href="'.$chat_url.'quiz_tops.php?session=&cnt=10&type=COUNT&when=ALWAYS" target="_blank">здесь</a>', $quiz_config['private_output']);
+            $messages_to_show[] = quiz_prepare_message('пїЅпїЅпїЅпїЅпїЅпїЅпїЅ <b>!пїЅпїЅпїЅ</b> пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ <a href="'.$chat_url.'quiz_tops.php?session=&cnt=10&type=COUNT&when=ALWAYS" target="_blank">пїЅпїЅпїЅпїЅпїЅ</a>', $quiz_config['private_output']);
             if ($quiz_config['private_output']) {
                 include($engine_path."messages_put.php");
                 exit;
@@ -117,11 +115,11 @@ if (defined('Q_COMMON')) {
         if (file_exists($quiz_answer_file)) {
             $f = trim(quiz_strtolower(file_get_contents($quiz_answer_file)));
             list ($answer, $question_time) = explode("\t", $f);
-            $tmp_answer = str_replace('ё', 'е', $answer);
-            $tmp_answer = str_replace('й', 'и', $tmp_answer);
+            $tmp_answer = str_replace('пїЅ', 'пїЅ', $answer);
+            $tmp_answer = str_replace('пїЅ', 'пїЅ', $tmp_answer);
             $tmp_mesg = quiz_strtolower(strip_tags($mesg));
-            $tmp_mesg = str_replace('ё', 'е', $tmp_mesg);
-            $tmp_mesg = str_replace('й', 'и', $tmp_mesg);
+            $tmp_mesg = str_replace('пїЅ', 'пїЅ', $tmp_mesg);
+            $tmp_mesg = str_replace('пїЅ', 'пїЅ', $tmp_mesg);
 
             $answer_time = time()-$question_time;
             if ($answer_time > $quiz_config['tip_timeout']) $quiz_config['add_points'] = $quiz_config['add_points']-$quiz_config['tip_price'];
@@ -177,4 +175,3 @@ if (defined('Q_COMMON')) {
         }
     }
 }
-?>

@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="Removed docker db temp storage from git.">
+    <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="Upgrade README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/php_migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/php_migration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/quiz/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/quiz/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/quiz/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz.php" beforeDir="false" afterPath="$PROJECT_DIR$/quiz.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +82,7 @@
       <updated>1699886789563</updated>
       <workItem from="1699886790780" duration="630000" />
       <workItem from="1699887424147" duration="600000" />
-      <workItem from="1699888038888" duration="9257000" />
+      <workItem from="1699888038888" duration="10985000" />
     </task>
     <task id="LOCAL-00001" summary="Init dicker">
       <option name="closed" value="true" />
@@ -173,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699897475596</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Upgrade README.md">
+      <option name="closed" value="true" />
+      <created>1699898936800</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699898936800</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +214,7 @@
     <MESSAGE value="Deploy VOC BSE MVOC collection" />
     <MESSAGE value="UTF and code style part refactoring" />
     <MESSAGE value="Removed docker db temp storage from git." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed docker db temp storage from git." />
+    <MESSAGE value="Upgrade README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgrade README.md" />
   </component>
 </project>
