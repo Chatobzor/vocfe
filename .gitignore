@@ -1,0 +1,11 @@
+items/*
+converts/*
+clans-logos/*
+clans-avatar/*
+photos/*
+data/**/*.dat
+data/**/*.tmp
+data/**/*.user
+data/**/*.log
+data/**/*.lock
+data/**/*.pid
