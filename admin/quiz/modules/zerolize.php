@@ -1,78 +1,99 @@
-<?
-/*[COPYRIGHTS]*/
+<?php
 
-if (!defined('Q_COMMON')) exit('stop');
+if (!defined('Q_COMMON')) {
+    exit('stop');
+}
 
 /*******************************************/
 /* Connect to database */
 $error = quiz_db_connect();
 
 if ($error) {
-	quiz_print_error($error);
-	exit;
+    quiz_print_error($error);
+    exit;
 }
 
 $act = (isset($_GET['act'])) ? trim(strip_tags($_GET['act'])) : '';
 
 if ($act == 'user') {
-	$user = (isset($_GET['user'])) ? intval($_GET['user']) : 0;
-	if ($user) {
-		$sql = 'DELETE FROM '.$quiz_config['db_prefix'].'quiz_full_stat WHERE user_id='.$user;
-		mysql_query($sql);
-		if (mysql_error()) {
-			quiz_print_error('Ошибка MySQL: '.mysql_error());
-			exit;
-		}
-		$sql = 'DELETE FROM '.$quiz_config['db_prefix'].'quiz_top WHERE user_id='.$user;
-		mysql_query($sql);
-		if (mysql_error()) {
-			quiz_print_error('Ошибка MySQL: '.mysql_error());
-			exit;
-		}
+    $user = (isset($_GET['user'])) ? intval($_GET['user']) : 0;
+    if ($user) {
+        $sql = 'DELETE FROM '.$quiz_config['db_prefix'].'quiz_full_stat WHERE user_id='.$user;
+        mysql_query($sql);
+        if (mysql_error()) {
+            quiz_print_error('РћС€РёР±РєР° MySQL: '.mysql_error());
+            exit;
+        }
+        $sql = 'DELETE FROM '.$quiz_config['db_prefix'].'quiz_top WHERE user_id='.$user;
+        mysql_query($sql);
+        if (mysql_error()) {
+            quiz_print_error('РћС€РёР±РєР° MySQL: '.mysql_error());
+            exit;
+        }
 
-		header('Location: quiz.php?session='.$session.'&m=zerolize&act=user');
-		exit;
-	}
+        header('Location: quiz.php?session='.$session.'&m=zerolize&act=user');
+        exit;
+    }
 
-	$users = array();
-	$sql = 'SELECT user_id, user_name FROM '.$quiz_config['db_prefix'].'quiz_full_stat ORDER BY user_name ASC';
-	$res = mysql_query($sql);
-	if (mysql_error()) {
-		quiz_print_error('Ошибка MySQL: '.mysql_error());
-		exit;
-	}
-	while ($row = mysql_fetch_assoc($res)) {
-		$users[$row['user_id']] = $row['user_name'];
-	}
-	//print_r($users);
+    $users = array();
+    $sql = 'SELECT user_id, user_name FROM '.$quiz_config['db_prefix'].'quiz_full_stat ORDER BY user_name ASC';
+    $res = mysql_query($sql);
+    if (mysql_error()) {
+        quiz_print_error('РћС€РёР±РєР° MySQL: '.mysql_error());
+        exit;
+    }
+    while ($row = mysql_fetch_assoc($res)) {
+        $users[$row['user_id']] = $row['user_name'];
+    }
 }
 
 ?>
-<style>
-.user { display:block; width:180px; float:left; margin-bottom:5px; }
-</style>
-<fieldset>
-	<legend>Пожалуйста выберите действие</legend>
-	<ul>
-		<li><a href="quiz.php?m=zerolize&session=<?=$session;?>&act=static">Обнулить статические данные *</a></li>
-		<li><a href="quiz.php?m=zerolize&session=<?=$session;?>&act=all">Обнулить статические и динамические данные **</a></li>
-		<li><a href="quiz.php?m=zerolize&session=<?=$session;?>&act=user">Обнулить результаты викторины для конкретного пользователя</a></li>
-	</ul>
-	<div><b>* статические данные</b> - данные за ВСЁ время работы викторины (или с момента последнего удаления статических данных)</div>
-	<div><b>** динамические данные</b> - данные за последние 30 дней работы викторины. Записи старше 30 дней автоматически удаляются из этого массива данных. По этим данным выстраиваются топы за сегодня/вчера/неделю/месяц.</div>
-</fieldset>
+    <style>
+        .user {
+            display: block;
+            width: 180px;
+            float: left;
+            margin-bottom: 5px;
+        }
+    </style>
+    <fieldset>
+        <legend>РџРѕР¶Р°Р»СѓР№СЃС‚Р° РІС‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ</legend>
+        <ul>
+            <li><a href="quiz.php?m=zerolize&session=<?= $session; ?>&act=static">РћР±РЅСѓР»РёС‚СЊ СЃС‚Р°С‚РёС‡РµСЃРєРёРµ РґР°РЅРЅС‹Рµ *</a></li>
+            <li>
+                <a href="quiz.php?m=zerolize&session=<?= $session; ?>&act=all">РћР±РЅСѓР»РёС‚СЊ СЃС‚Р°С‚РёС‡РµСЃРєРёРµ Рё РґРёРЅР°РјРёС‡РµСЃРєРёРµ РґР°РЅРЅС‹Рµ **</a>
+            </li>
+            <li>
+                <a href="quiz.php?m=zerolize&session=<?= $session; ?>&act=user">РћР±РЅСѓР»РёС‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚С‹ РІРёРєС‚РѕСЂРёРЅС‹ РґР»СЏ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ</a>
+            </li>
+        </ul>
+        <div>
+            <b>* СЃС‚Р°С‚РёС‡РµСЃРєРёРµ РґР°РЅРЅС‹Рµ</b> - РґР°РЅРЅС‹Рµ Р·Р° Р’РЎРЃ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹ РІРёРєС‚РѕСЂРёРЅС‹ (РёР»Рё СЃ РјРѕРјРµРЅС‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ СѓРґР°Р»РµРЅРёСЏ СЃС‚Р°С‚РёС‡РµСЃРєРёС… РґР°РЅРЅС‹С…)
+        </div>
+        <div>
+            <b>** РґРёРЅР°РјРёС‡РµСЃРєРёРµ РґР°РЅРЅС‹Рµ</b> - РґР°РЅРЅС‹Рµ Р·Р° РїРѕСЃР»РµРґРЅРёРµ 30 РґРЅРµР№ СЂР°Р±РѕС‚С‹ РІРёРєС‚РѕСЂРёРЅС‹. Р—Р°РїРёСЃРё СЃС‚Р°СЂС€Рµ 30 РґРЅРµР№ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё СѓРґР°Р»СЏСЋС‚СЃСЏ РёР· СЌС‚РѕРіРѕ РјР°СЃСЃРёРІР° РґР°РЅРЅС‹С…. РџРѕ СЌС‚РёРј РґР°РЅРЅС‹Рј РІС‹СЃС‚СЂР°РёРІР°СЋС‚СЃСЏ С‚РѕРїС‹ Р·Р° СЃРµРіРѕРґРЅСЏ/РІС‡РµСЂР°/РЅРµРґРµР»СЋ/РјРµСЃСЏС†.
+        </div>
+    </fieldset>
 
-<? if ($act == 'user'):?>
-<fieldset>
-	<legend>Выберите пользователя, результаты которого Вы хотите обнулить</legend>
-	<? if (count($users)) :?>
-		<div style="padding-top:10px; padding-bottom:20px; ">В списке отображаются только те пользователи, которые дали хотябы один ответ с момента последнего обнуления викторины.</div>
-		<? foreach($users as $k => $v):?>
-			<a href="quiz.php?m=zerolize&session=<?=$session;?>&act=user&user=<?=$k;?>" class="user" onclick="if(!confirm('Обнулить все результаты викторины от этого пользователя?')) return false;"><?=$v;?></a>
-		<? endforeach;?>
-		<div style="clear:both;"></div>
-	<? else: ?>
-		Никто из пользователей ещё не отвечал на вопросы
-	<? endif;?>
-</fieldset>
-<? endif;?>
+<?
+if ($act == 'user'): ?>
+    <fieldset>
+        <legend>Р’С‹Р±РµСЂРёС‚Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ, СЂРµР·СѓР»СЊС‚Р°С‚С‹ РєРѕС‚РѕСЂРѕРіРѕ Р’С‹ С…РѕС‚РёС‚Рµ РѕР±РЅСѓР»РёС‚СЊ</legend>
+        <?
+        if (count($users)) : ?>
+            <div style="padding-top:10px; padding-bottom:20px; ">Р’ СЃРїРёСЃРєРµ РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ С‚РѕР»СЊРєРѕ С‚Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»Рё, РєРѕС‚РѕСЂС‹Рµ РґР°Р»Рё С…РѕС‚СЏР±С‹ РѕРґРёРЅ РѕС‚РІРµС‚ СЃ РјРѕРјРµРЅС‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ РѕР±РЅСѓР»РµРЅРёСЏ РІРёРєС‚РѕСЂРёРЅС‹.</div>
+            <?
+            foreach ($users as $k => $v): ?>
+                <a href="quiz.php?m=zerolize&session=<?= $session; ?>&act=user&user=<?= $k; ?>" class="user"
+                        onclick="if(!confirm('РћР±РЅСѓР»РёС‚СЊ РІСЃРµ СЂРµР·СѓР»СЊС‚Р°С‚С‹ РІРёРєС‚РѕСЂРёРЅС‹ РѕС‚ СЌС‚РѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ?')) return false;"><?= $v; ?></a>
+            <?
+            endforeach; ?>
+            <div style="clear:both;"></div>
+        <?
+        else: ?>
+            РќРёРєС‚Рѕ РёР· РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РµС‰С‘ РЅРµ РѕС‚РІРµС‡Р°Р» РЅР° РІРѕРїСЂРѕСЃС‹
+        <?
+        endif; ?>
+    </fieldset>
+<?
+endif; ?>

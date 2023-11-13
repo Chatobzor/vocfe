@@ -26,22 +26,18 @@ function quiz_print_error($err)
 
 function quiz_db_connect()
 {
-    global $quiz_config;
+    global $quiz_config, $mysql_server, $mysql_user, $mysql_db, $mysql_password;
 
-    if (!$quiz_config['db_server'] || !$quiz_config['db_user'] || !$quiz_config['db_name']) {
+    if (!$mysql_server || !$mysql_user || !$mysql_db) {
         return QUIZ_DB_CONFIG_ERROR;
     }
 
-    if (!mysql_connect($quiz_config['db_server'], $quiz_config['db_user'], $quiz_config['db_pass'])) {
+    if (!mysql_connect($mysql_server, $mysql_user, $mysql_password)) {
         return QUIZ_DB_CONNECT_ERROR;
     }
 
-    if (!mysql_select_db($quiz_config['db_name'])) {
+    if (!mysql_select_db($mysql_db)) {
         return QUIZ_DB_DATABASE_ERROR;
-    }
-
-    if ($quiz_config['mysql_encoding']) {
-        mysql_query('SET NAMES '.$quiz_config['mysql_encoding']);
     }
 
     return false;

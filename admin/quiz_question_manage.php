@@ -15,10 +15,10 @@ $QUIZ_CONF_FILE = $data_path.'quiz/config.php';
 require_once($QUIZ_CONF_FILE);
 
 // Connecting to database
-if ($quiz_config['db_server'] && $quiz_config['db_user'] && $quiz_config['db_pass'] && $quiz_config['db_name'] && $quiz_config['db_prefix']) {
-    if (mysql_connect($quiz_config['db_server'], $quiz_config['db_user'], $quiz_config['db_pass'])) {
+if ($mysql_server && $mysql_user && $mysql_password) {
+    if (mysql_connect($mysql_server, $mysql_user, $mysql_password)) {
         // Selecting database
-        if (mysql_select_db($quiz_config['db_name'])) {
+        if (mysql_select_db($mysql_db)) {
             // Delete question
             $del = intval($_GET['del']);
             if ($del > 0) {
@@ -50,7 +50,7 @@ if ($quiz_config['db_server'] && $quiz_config['db_user'] && $quiz_config['db_pas
             // Selecting questions
             $sql = 'SELECT * FROM '.$quiz_config['db_prefix'].'quiz LIMIT '.($page * $in_page).', '.$in_page;
             $res = mysql_query($sql);
-            while ($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
+            while ($row = mysql_fetch_array($res)) {
                 $questions[] = $row;
             }
         } else {

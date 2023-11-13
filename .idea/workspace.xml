@@ -4,16 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="Upgrade README.md">
+    <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="New Admin refactoring.">
+      <change afterPath="$PROJECT_DIR$/admin/admins.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/settings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin_users.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/check_session.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/check_session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/quiz/modules/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/export.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/questions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/questions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/randomize.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/randomize.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/stat.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/stat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/zerolize.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/zerolize.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/quiz_question_manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz_question_manage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/php_migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/php_migration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/quiz/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/quiz/engine.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/engine.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/quiz/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/quiz/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/quiz/randomizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/randomizer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/voc.conf" beforeDir="false" afterPath="$PROJECT_DIR$/data/voc.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz.php" beforeDir="false" afterPath="$PROJECT_DIR$/quiz.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_top_export.php" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_top_export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_tops.php" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_tops.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +79,13 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/admin" />
+      <recent name="$PROJECT_DIR$/admin/new_admin" />
       <recent name="$PROJECT_DIR$/core" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/admin" />
       <recent name="$PROJECT_DIR$/ops/migrations" />
     </key>
   </component>
@@ -82,7 +99,7 @@
       <updated>1699886789563</updated>
       <workItem from="1699886790780" duration="630000" />
       <workItem from="1699887424147" duration="600000" />
-      <workItem from="1699888038888" duration="10985000" />
+      <workItem from="1699888038888" duration="14908000" />
     </task>
     <task id="LOCAL-00001" summary="Init dicker">
       <option name="closed" value="true" />
@@ -188,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699898936800</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Upgrade README.md">
+      <option name="closed" value="true" />
+      <created>1699900485570</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699900485570</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +240,7 @@
     <MESSAGE value="UTF and code style part refactoring" />
     <MESSAGE value="Removed docker db temp storage from git." />
     <MESSAGE value="Upgrade README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upgrade README.md" />
+    <MESSAGE value="New Admin refactoring." />
+    <option name="LAST_COMMIT_MESSAGE" value="New Admin refactoring." />
   </component>
 </project>

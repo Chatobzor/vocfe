@@ -68,7 +68,6 @@ function get_connection($passed_connection)
     return $SQLLink;
 }
 
-//Override functions
 if (!function_exists('mysql_connect')) {
     function mysql_connect($host, $username, $password)
     {

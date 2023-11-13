@@ -116,7 +116,6 @@ $last_key = -1;
     if ($_SESSION['permission']): ?>
         <a href="settings.php" class="button to_frame">Настройки</a>
         <a href="admins.php" class="button to_frame">Администраторы</a>
-        <a href="info.php" class="button to_frame">INFO</a>
     <?php
     endif; ?>
     <div class="search-wrap">

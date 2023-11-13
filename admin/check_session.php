@@ -15,10 +15,10 @@ if ($_POST) {
 
 include('../inc_common.php');
 
-$version = '1.0';
+$version = '2.0';
 $lang = 'ru';
 $logs_limit = 500;
-$admin_users = array();
+$admin_users = [];
 $folder_admin_files = 'new_admin';
 
 $css_path = $chat_url.'admin/'.$folder_admin_files.'/css/';

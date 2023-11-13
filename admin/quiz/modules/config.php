@@ -428,30 +428,6 @@ if (!TOP_TABLE_EXISTS || !QUESTION_TABLE_EXISTS || !STAT_TABLE_EXISTS) { ?>
         <legend>Настройки базы данных</legend>
         <table width="100%">
             <tr class="tr_normal" onmouseover="this.className='tr_hover';" onmouseout="this.className='tr_normal';">
-                <td class="settings_left" title="Сервер MySQL">Сервер MySQL:</td>
-                <td><input type="text" name="db_server" value="<?php
-                    echo htmlspecialchars(stripslashes($quiz_config['db_server'])); ?>" style="width: 150;"
-                            class="input"> <?= quiz_suggest_config($quiz_config['db_server'], $mysql_server); ?></td>
-            </tr>
-            <tr class="tr_normal" onmouseover="this.className='tr_hover';" onmouseout="this.className='tr_normal';">
-                <td class="settings_left" title="Имя пользователя MySQL">Пользователь MySQL:</td>
-                <td><input type="text" name="db_user" value="<?php
-                    echo htmlspecialchars(stripslashes($quiz_config['db_user'])); ?>" style="width: 150;"
-                            class="input"> <?= quiz_suggest_config($quiz_config['db_user'], $mysql_user); ?></td>
-            </tr>
-            <tr class="tr_normal" onmouseover="this.className='tr_hover';" onmouseout="this.className='tr_normal';">
-                <td class="settings_left" title="Пароль к базе данных MySQL">Пароль пользователя MySQL:</td>
-                <td><input type="text" name="db_pass" value="<?php
-                    echo htmlspecialchars(stripslashes($quiz_config['db_pass'])); ?>" style="width: 150;"
-                            class="input"> <?= quiz_suggest_config($quiz_config['db_pass'], $mysql_password); ?></td>
-            </tr>
-            <tr class="tr_normal" onmouseover="this.className='tr_hover';" onmouseout="this.className='tr_normal';">
-                <td class="settings_left" title="База данных MySQL">Название базы данных:</td>
-                <td><input type="text" name="db_name" value="<?php
-                    echo htmlspecialchars(stripslashes($quiz_config['db_name'])); ?>" style="width: 150;"
-                            class="input"> <?= quiz_suggest_config($quiz_config['db_name'], $mysql_db); ?></td>
-            </tr>
-            <tr class="tr_normal" onmouseover="this.className='tr_hover';" onmouseout="this.className='tr_normal';">
                 <td class="settings_left" title="Префикс таблиц MySQL">Префикс таблиц:</td>
                 <td><input type="text" name="db_prefix" value="<?php
                     echo htmlspecialchars(stripslashes($quiz_config['db_prefix'])); ?>" style="width: 150;"

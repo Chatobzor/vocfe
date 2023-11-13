@@ -1,7 +1,8 @@
 <?php
-/*[COPYRIGHTS]*/
 
-if (!defined('Q_COMMON')) exit('stop');
+if (!defined('Q_COMMON')) {
+    exit('stop');
+}
 
 $page = intval($_GET['page']);
 set_variable('kw');
@@ -14,8 +15,8 @@ $question_count = 0;
 $error = quiz_db_connect();
 
 if ($error) {
-	quiz_print_error($error);
-	exit;
+    quiz_print_error($error);
+    exit;
 }
 
 $sql = 'SELECT count(*) FROM '.$quiz_config['db_prefix'].'quiz LIMIT 1';
@@ -35,7 +36,11 @@ if ($del > 0) {
 /*******************************************/
 /* For search */
 $where = '';
-if ($kw) $where = ' WHERE question LIKE "%'.mysql_real_escape_string($kw).'%" OR answer LIKE "%'.mysql_real_escape_string($kw).'%" ';
+if ($kw) {
+    $where = ' WHERE question LIKE "%'.mysql_real_escape_string($kw).'%" OR answer LIKE "%'.mysql_real_escape_string(
+            $kw
+        ).'%" ';
+}
 
 /*******************************************/
 /* Select questions count */
@@ -47,9 +52,9 @@ mysql_free_result($res);
 /*******************************************/
 /* Select questions */
 $questions = array();
-$sql = 'SELECT * FROM '.$quiz_config['db_prefix'].'quiz '.$where.' ORDER BY id ASC LIMIT '.($page*$in_page).', '.$in_page;
+$sql = 'SELECT * FROM '.$quiz_config['db_prefix'].'quiz '.$where.' ORDER BY id ASC LIMIT '.($page * $in_page).', '.$in_page;
 $res = mysql_query($sql);
-while ($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
+while ($row = mysql_fetch_array($res)) {
     $questions[] = $row;
 }
 mysql_free_result($res);
@@ -57,57 +62,80 @@ mysql_free_result($res);
 /*******************************************/
 /* Generate pages list */
 $pages = array();
-$page_count = ceil($question_count/$in_page);
+$page_count = ceil($question_count / $in_page);
 for ($i = 0; $i < $page_count; $i++) {
-    if ($i == $page) $pages[] = '<span style="border:1px solid #eeeeee;"><b>'.($i+1).'</b></span>';
-	else $pages[] = '<a href="quiz.php?m='.$mod.'&session='.$session.'&page='.$i.'&kw='.$kw.'">'.($i+1).'</a>';
+    if ($i == $page) {
+        $pages[] = '<span style="border:1px solid #eeeeee;"><b>'.($i + 1).'</b></span>';
+    } else {
+        $pages[] = '<a href="quiz.php?m='.$mod.'&session='.$session.'&page='.$i.'&kw='.$kw.'">'.($i + 1).'</a>';
+    }
 }
 $page_in_row = 11;
-$offset = intval($page-floor($page_in_row/2));
-if ($offset < 0) $offset = 0;
+$offset = intval($page - floor($page_in_row / 2));
+if ($offset < 0) {
+    $offset = 0;
+}
 $length = $page_in_row;
 
-$prev = $page-1; if ($prev < 0) $prev = 0;
-$next = $page+1; if ($next > $page_count-1) $next = $page_count-1;
+$prev = $page - 1;
+if ($prev < 0) {
+    $prev = 0;
+}
+$next = $page + 1;
+if ($next > $page_count - 1) {
+    $next = $page_count - 1;
+}
 
 $page_string = '
 <table cellspacing="0" cellpadding="3">
 <tr>
-  <td><a href="quiz.php?m='.$mod.'&session='.$session.'&page=0" title="œÂ‚‡ˇ ÒÚ‡ÌËˆ‡"><img src="quiz/images/first.png" width="19" height="19" border="0"></a></td>
-  <td><a href="quiz.php?m='.$mod.'&session='.$session.'&page='.$prev.'&kw='.$kw.'" title="œÂ‰˚‰Û˘‡ˇ ÒÚ‡ÌËˆ‡"><img src="quiz/images/prev.png" width="19" height="19" border="0"></a></td>
-  <td><a href="quiz.php?m='.$mod.'&session='.$session.'&page='.$next.'&kw='.$kw.'" title="—ÎÂ‰Û˛˘‡ˇ ÒÚ‡ÌËˆ‡"><img src="quiz/images/next.png" width="19" height="19" border="0"></a></td>
-  <td><a href="quiz.php?m='.$mod.'&session='.$session.'&page='.($page_count-1).'&kw='.$kw.'" title="œÓÒÎÂ‰Ìˇˇ ÒÚ‡ÌËˆ‡"><img src="quiz/images/last.png" width="19" height="19" border="0"></a></td>
+  <td><a href="quiz.php?m='.$mod.'&session='.$session.'&page=0" title="–ü–µ—Ä–≤–∞—è —Å—Ç—Ä–∞–Ω–∏—Ü–∞"><img src="quiz/images/first.png" width="19" height="19" border="0"></a></td>
+  <td><a href="quiz.php?m='.$mod.'&session='.$session.'&page='.$prev.'&kw='.$kw.'" title="–ü—Ä–µ–¥—ã–¥—É—â–∞—è —Å—Ç—Ä–∞–Ω–∏—Ü–∞"><img src="quiz/images/prev.png" width="19" height="19" border="0"></a></td>
+  <td><a href="quiz.php?m='.$mod.'&session='.$session.'&page='.$next.'&kw='.$kw.'" title="–°–ª–µ–¥—É—é—â–∞—è —Å—Ç—Ä–∞–Ω–∏—Ü–∞"><img src="quiz/images/next.png" width="19" height="19" border="0"></a></td>
+  <td><a href="quiz.php?m='.$mod.'&session='.$session.'&page='.($page_count - 1).'&kw='.$kw.'" title="–ü–æ—Å–ª–µ–¥–Ω—è—è —Å—Ç—Ä–∞–Ω–∏—Ü–∞"><img src="quiz/images/last.png" width="19" height="19" border="0"></a></td>
   <td>'.join('</td><td>', array_slice($pages, $offset, $length)).'</td>
-  <td><input type="button" value="+ ‰Ó·‡‚ËÚ¸" class="button" title="ƒÓ·‡‚ËÚ¸ ‚ÓÔÓÒ˚ ‚ ·‡ÁÛ" onclick="wopen(\'quiz.php?m=add&session='.$session.'\', 500, 300);"></td>
-  <td><input type="button" value="ËÏÔÓÚ" class="button" title="«‡„ÛÁËÚ¸ ‚ÓÔÓÒ˚ ‚ ·‡ÁÛ ‰‡ÌÌ˚ı ËÁ Ù‡ÈÎ‡" onclick="wopen(\'quiz.php?m=import&session='.$session.'\', 500, 300);"></td>
-  <td><input type="button" value="˝ÍÒÔÓÚ" class="button" title="—Óı‡ÌËÚ¸ ·‡ÁÛ ‰‡ÌÌ˚ı ‚ Ù‡ÈÎ" onclick="wopen(\'quiz.php?m=export&session='.$session.'\', 500, 300);"></td>
-  <td><input type="button" value="ÔÂÂÏÂ¯‡Ú¸" class="button" title="»ÁÏÂÌËÚ¸ ÔÓˇ‰ÓÍ ÒÎÂ‰Ó‚‡ÌËˇ ‚ÓÔÓÒÓ‚" onclick="wopen(\'quiz.php?m=randomize&session='.$session.'\', 500, 300);"></td>
+  <td><input type="button" value="+ –¥–æ–±–∞–≤–∏—Ç—å" class="button" title="–î–æ–±–∞–≤–∏—Ç—å –≤–æ–ø—Ä–æ—Å—ã –≤ –±–∞–∑—É" onclick="wopen(\'quiz.php?m=add&session='.$session.'\', 500, 300);"></td>
+  <td><input type="button" value="–∏–º–ø–æ—Ä—Ç" class="button" title="–ó–∞–≥—Ä—É–∑–∏—Ç—å –≤–æ–ø—Ä–æ—Å—ã –≤ –±–∞–∑—É –¥–∞–Ω–Ω—ã—Ö –∏–∑ —Ñ–∞–π–ª–∞" onclick="wopen(\'quiz.php?m=import&session='.$session.'\', 500, 300);"></td>
+  <td><input type="button" value="—ç–∫—Å–ø–æ—Ä—Ç" class="button" title="–°–æ—Ö—Ä–∞–Ω–∏—Ç—å –±–∞–∑—É –¥–∞–Ω–Ω—ã—Ö –≤ —Ñ–∞–π–ª" onclick="wopen(\'quiz.php?m=export&session='.$session.'\', 500, 300);"></td>
+  <td><input type="button" value="–ø–µ—Ä–µ–º–µ—à–∞—Ç—å" class="button" title="–ò–∑–º–µ–Ω–∏—Ç—å –ø–æ—Ä—è–¥–æ–∫ —Å–ª–µ–¥–æ–≤–∞–Ω–∏—è –≤–æ–ø—Ä–æ—Å–æ–≤" onclick="wopen(\'quiz.php?m=randomize&session='.$session.'\', 500, 300);"></td>
 </tr>
 </table>
 ';
 ?>
 
-<?php echo $error;?>
+<?php
+echo $error; ?>
 
-<div style="text-align:left; padding:5px 10px;"><?php echo $page_string;?></div>
+<div style="text-align:left; padding:5px 10px;"><?php
+    echo $page_string; ?></div>
 <div style="margin:0px 10px;">
-	<table width="98%" style="border:1px solid #bfb8bf;">
-	<tr style="background:#eeeeee;">
-	  <td width="30" style="text-align:center; border-bottom:1px solid #bdbece; border-right:1px solid #b5b6c8;"><b>ID</b></td>
-	  <td style="padding:0px 2px; font-weight:bold; border-bottom:1px solid #bdbece; border-right:1px solid #b5b6c8;">¬ÓÔÓÒ</td>
-	  <td style="border-bottom:1px solid #bdbece; border-right:1px solid #b5b6c8;"width="30">&nbsp;</td>
-	</tr>
-	<?php
-	foreach ($questions as $question) {
-	    echo '
+    <table width="98%" style="border:1px solid #bfb8bf;">
+        <tr style="background:#eeeeee;">
+            <td width="30" style="text-align:center; border-bottom:1px solid #bdbece; border-right:1px solid #b5b6c8;">
+                <b>ID</b></td>
+            <td style="padding:0px 2px; font-weight:bold; border-bottom:1px solid #bdbece; border-right:1px solid #b5b6c8;">–í–æ–ø—Ä–æ—Å</td>
+            <td style="border-bottom:1px solid #bdbece; border-right:1px solid #b5b6c8;" width="30">&nbsp;</td>
+        </tr>
+        <?php
+        foreach ($questions as $question) {
+            echo '
 	    <tr class="tr_normal" onmouseover="this.className=\'tr_hover\';" onmouseout="this.className=\'tr_normal\';">
 	      <td width="30" height="30" style="text-align:center;">'.$question['id'].'</td>
-	      <td height="30">'.str_replace($kw, '<span style="font-weight:bold; color:red;">'.$kw.'</span>', $question['question']).' (<b>'.str_replace($kw, '<span style="font-weight:bold; color:red;">'.$kw.'</span>', $question['answer']).'</b>)</td>
-	      <td width="30" height="30" style="text-align:center;"><a href="quiz.php?m='.$mod.'&session='.$session.'&page='.$page.'&del='.$question['id'].'" onclick="if (!confirm(\'”‰‡ÎËÚ¸ ˝ÚÓÚ ‚ÓÔÓÒ?\')) return false;"><img src="quiz/images/del.gif" width="16" height="16" alt="”‰‡ÎËÚ¸" title="”‰‡ÎËÚ¸" border="0"></a></td>
+	      <td height="30">'.str_replace(
+                    $kw,
+                    '<span style="font-weight:bold; color:red;">'.$kw.'</span>',
+                    $question['question']
+                ).' (<b>'.str_replace(
+                    $kw,
+                    '<span style="font-weight:bold; color:red;">'.$kw.'</span>',
+                    $question['answer']
+                ).'</b>)</td>
+	      <td width="30" height="30" style="text-align:center;"><a href="quiz.php?m='.$mod.'&session='.$session.'&page='.$page.'&del='.$question['id'].'" onclick="if (!confirm(\'–£–¥–∞–ª–∏—Ç—å —ç—Ç–æ—Ç –≤–æ–ø—Ä–æ—Å?\')) return false;"><img src="quiz/images/del.gif" width="16" height="16" alt="–£–¥–∞–ª–∏—Ç—å" title="–£–¥–∞–ª–∏—Ç—å" border="0"></a></td>
 	    </tr>
 	    ';
-	}
-	?>
-	</table>
+        }
+        ?>
+    </table>
 </div>
-<div style="text-align:left; padding:5px 10px;"><?php echo $page_string;?></div>
+<div style="text-align:left; padding:5px 10px;"><?php
+    echo $page_string; ?></div>

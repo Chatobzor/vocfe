@@ -8,10 +8,10 @@ chdir($path);
 /************************************************/
 /* Configuration */
 require_once('config.php');
-define('MYSQL_SERVER', $quiz_config['db_server']); /* define port or socket here if needed (localhost:3306 or localhost:/tmp/mysqld/mysql.sock*/
-define('MYSQL_USER', $quiz_config['db_user']); /* MySQL user */
-define('MYSQL_PASSWORD', $quiz_config['db_pass']); /* MySQL Password */
-define('MYSQL_DB', $quiz_config['db_name']); /* database name */
+define('MYSQL_SERVER', $mysql_server);
+define('MYSQL_USER', $mysql_user); /* MySQL user */
+define('MYSQL_PASSWORD', $mysql_password); /* MySQL Password */
+define('MYSQL_DB', $mysql_db); /* database name */
 define('MYSQL_TABLE_PREFIX', $quiz_config['db_prefix']); /* common table prefix */
 
 /************************************************/
@@ -26,7 +26,6 @@ if (!mysql_select_db(MYSQL_DB)) {
     echo("Cannot select database. ".mysql_error()."\n");
     exit();
 }
-if ($quiz_config['mysql_encoding']) mysql_query('SET NAMES '.$quiz_config['mysql_encoding']);
 
 $res = mysql_query('SELECT count(*) AS cnt FROM '.MYSQL_TABLE_PREFIX.'quiz LIMIT 1');
 list ($count) = mysql_fetch_array($res);

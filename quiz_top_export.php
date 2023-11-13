@@ -1,17 +1,18 @@
 <?php
-/*[COPYRIGHTS]*/
 
 require_once 'inc_common.php';
 $quiz_top_file = $data_path.'quiz/top.dat';
-if (!file_exists($quiz_top_file)) exit();
+if (!file_exists($quiz_top_file)) {
+    exit();
+}
 
 /*************************************/
 /* Configuration. You can edit it. */
-$w_answers   = 'îòâåòîâ';
-$font_color  = '#000000'; // Öâåò òåêñòà
-$font_family = 'Verdana, Tahoma, Arial, Helvetica'; // Ãàğíèòóğà øğèôòà
-$font_size   = '11px'; // Ğàçìåğ øğèôòà
-$cellpadding = '1'; // Âíóòğåííèé îòñòóï ÿ÷ååê òàáëèöû
+$w_answers = 'Ğ¾Ñ‚Ğ²ĞµÑ‚Ğ¾Ğ²';
+$font_color = '#000000'; // Ğ¦Ğ²ĞµÑ‚ Ñ‚ĞµĞºÑÑ‚Ğ°
+$font_family = 'Verdana, Tahoma, Arial, Helvetica'; // Ğ“Ğ°Ñ€Ğ½Ğ¸Ñ‚ÑƒÑ€Ğ° ÑˆÑ€Ğ¸Ñ„Ñ‚Ğ°
+$font_size = '11px'; // Ğ Ğ°Ğ·Ğ¼ĞµÑ€ ÑˆÑ€Ğ¸Ñ„Ñ‚Ğ°
+$cellpadding = '1'; // Ğ’Ğ½ÑƒÑ‚Ñ€ĞµĞ½Ğ½Ğ¸Ğ¹ Ğ¾Ñ‚ÑÑ‚ÑƒĞ¿ ÑÑ‡ĞµĞµĞº Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñ‹
 
 /*************************************/
 /* Do not edit something below. */
@@ -23,13 +24,15 @@ if (defined('Q_COMMON')) {
     if (count($lines)) {
         echo 'document.write(\'<table cellspacing="0" cellpadding="'.$cellpadding.'">';
         $i = 0;
-        foreach($lines as $line) {
+        foreach ($lines as $line) {
             $i++;
             $line = trim($line);
             list($nick, $cnt, $user_id) = explode("\t", $line);
-            echo str_replace(array("\\", "'"), array("", "\\'"), '<tr><td'.$css.'>'.$i.'.</td><td'.$css.'><a'.$css.' href="'.$chat_url.'fullinfo.php?user_id='.$user_id.'" target="_blank">'.$nick.' ('.$cnt.' '.$w_answers.')</a></td></tr>');
+            echo str_replace(array("\\", "'"),
+                array("", "\\'"),
+                '<tr><td'.$css.'>'.$i.'.</td><td'.$css.'><a'.$css.' href="'.$chat_url.'fullinfo.php?user_id='.$user_id.'" target="_blank">'.$nick.' ('.$cnt.' '.$w_answers.')</a></td></tr>'
+            );
         }
         echo '</table>\');';
     }
 }
-?>

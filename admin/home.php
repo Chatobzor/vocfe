@@ -7,17 +7,15 @@ $host = parse_url($chat_url);
 $last_users = engine_last_registered();
 
 $host = parse_url($chat_url);
-if (isset($check_update)) {
-    $doc = new DOMDocument;
-    $dom = array();
-    $doc->load('http://mvoc.ru/xml/new_admin/'.$version.'/'.$host['host']);
-    $dom['type'] = $doc->getElementsByTagName("type")->item(0)->nodeValue;
-    $dom['messages'] = iconv("UTF-8", "utf-8", $doc->getElementsByTagName("messages")->item(0)->nodeValue);
+$doc = new DOMDocument;
+$dom = [];
+$doc->load('http://mvoc.ru/xml/new_admin/'.$version.'/'.$host['host']);
+$dom['type'] = $doc->getElementsByTagName("type")->item(0)->nodeValue;
+$dom['messages'] = $doc->getElementsByTagName("messages")->item(0)->nodeValue;
 
-    if (!$dom['messages']) {
-        $dom['type'] = 'error';
-        $dom['messages'] = 'Ошибка проверки обновления! Сервер не отвечает, возможно чат находится в черном списке';
-    }
+if (!$dom['messages']) {
+    $dom['type'] = 'error';
+    $dom['messages'] = 'Ошибка проверки обновления! Сервер не отвечает, возможно чат находится в черном списке';
 }
 
 $statistic = getMsgStatistic();
@@ -38,16 +36,11 @@ $statistic = getMsgStatistic();
 </head>
 <body>
 <h1>Краткие сведения о чате</h1>
-<?php
-if (isset($check_update)): ?>
+<?php if ($dom['messages']): ?>
     <p class="<?php
     echo $dom['type']; ?>"><?php
         echo $dom['messages']; ?></p>
-<?php
-else: ?>
-    <a href="home.php?check_update" class="btn check-update">Проверить обновление Админ панели</a>
-<?php
-endif; ?>
+<?php endif; ?>
 <div class="clear"></div>
 <hr/>
 
