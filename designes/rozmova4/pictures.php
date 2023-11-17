@@ -1,187 +1,272 @@
-<?php if (!defined("_COMMON_")) {echo "stop";exit;}
-include($file_path."designes/".$design."/common_title.php");
-include($file_path."designes/".$design."/common_browser_detect.php");
+<?php
+if (!defined("_COMMON_")) {
+    echo "stop";
+    exit;
+}
 include($engine_path."users_get_list.php");
+include($file_path."designes/".$design."/common_title.php");
+include($file_path."designes/".$design."/common_body_start.php");
 
-// DD addon
-define("LINES_PER_PAGE", 5);
-define("SMILEYS_PER_LINE", 4);
-
-if(!isset($DbLink)) {
-include_once($file_path."admin/config.php");
-define("C_DB_NAME", DB_NAME);
-define("C_DB_USER", DB_USER);
-define("C_DB_PASS", DB_PASS);
-include_once($file_path."admin/mysql.lib.php3");
-$DbLink = new DB;
-}
-/// DD modification start
-// initally (re)load the common smileyset
 ?>
-<script language="JavaScript">
-function ReloadSmileBar() {
-        if(window.opener != null) {
-       if(window.opener.ico != null) window.opener.ico.location.reload();
-    }
-}
-</script>
-<?php
-set_variable("action");
-set_variable("com_sm_name");
-set_variable("page");
-
-$page = intval($page);
-
-$UserUID = -1;
-
-// prevent possible SQL injection
-$com_sm_name = eregi_replace("'", "", $com_sm_name);
-$com_sm_name = eregi_replace(";", "", $com_sm_name);
-$com_sm_name = eregi_replace("SELECT", "", $com_sm_name);
-$com_sm_name = eregi_replace("DELETE", "", $com_sm_name);
-$com_sm_name = eregi_replace("UPDATE", "", $com_sm_name);
-$com_sm_name = eregi_replace("ALTER", "", $com_sm_name);
-$com_sm_name = htmlspecialchars($com_sm_name);
-
-for ($i=0;$i<count($users);$i++) {
-        $user_array = explode("\t",$users[$i]);
-        if ($user_array[USER_SESSION] == $session) {
-          $UserUID = $user_array[USER_REGID];
-      break;
+    <style type="text/css">
+        .smCat {
+            display: block;
+            text-decoration: none;
+            padding: 2px 3px 3px 3px;
+            color: red;
+            margin-right: 10px;
         }
-}
 
-if($UserUID != -1) {
-
-if ($action == "make_common") {
-        $DbLink->query("DELETE FROM smileys WHERE s_name = '$com_sm_name' AND uid = '$UserUID';");
-
-    $url = "";
-    for ($i=0;$i<count($pic_phrases);$i++) {
-            if($pic_phrases[$i] == $com_sm_name) {
-                $url = $pic_urls[$i];
-            break;
+        .smCat:hover, .active {
+            background: #55c500;
+            color: #fff !important;
         }
-    }
-    if($url != "") $DbLink->query("INSERT INTO smileys (s_name, url, uid) VALUES ('$com_sm_name','$url', '$UserUID');");
-    ?><script>ReloadSmileBar();</script><?php
-}
 
-if ($action == "unset_common") {
-        $DbLink->query("DELETE FROM smileys WHERE s_name = '$com_sm_name' AND uid = '$UserUID';");
-}
-// end of if if($UserUID != -1) {
-}
-
-// Loading the master set
-$DbLink->query("SELECT s_name, url FROM smileys WHERE uid = '-1';");
-$MaxSmileys = $DbLink->num_rows();
-
-if(isset($SysSmTbl)) unset($SysSmTbl);
-
-for($i = 0;$i<$MaxSmileys; $i++) {
-        list($name, $url) = $DbLink->next_record();
-        $SysSmTbl[$i]["name"] =  $name;
-}
-
-// Loading the user set
-$DbLink->query("SELECT s_name, url FROM smileys WHERE uid = '$UserUID';");
-$MaxSmileys = $DbLink->num_rows();
-
-if(isset($SmTbl)) unset($SmTbl);
-
-for($i = 0;$i<$MaxSmileys; $i++) {
-        list($name, $url) = $DbLink->next_record();
-        $SmTbl[$i]["name"] =  $name;
-          $SmTbl[$i]["url"] =  $url;
-}
-/// DD modification end
-// End of DD addon
-
-if ($browser == "msie") {
-?>
-<script>
-function ReloadSmileBar() {
-        if(window.opener != null) {
-       if(window.opener.ico != null) window.opener.ico.location.reload();
-    }
-}
-
-function e(){
-        parent.moveFromBoard(event,1);
-}
-document.onmousemove=e;</script>
-<?php } include($file_path."designes/".$design."/common_body_start.php");
-?>
-<div align=CENTER>
-<?php
-     $MaxPages = floor(count($pic_phrases)/(LINES_PER_PAGE*SMILEYS_PER_LINE))+0.5;
-     for($i = 0; $i < $MaxPages; $i++) {
-             if($i == $page) {
-                echo " <b>[".($i+1)."]</b> ";
+        .favCat {
+            color: red !important;
         }
-        else {
-                   echo " [<a href='".$chat_url."pictures.php?action=make_common&session=$session&page=$i'>".($i+1)."</a>] ";
+
+        .fav {
+            color: green;
+            text-align: center;
         }
-     }
-?>
-</div>
-<table border=1>
-<tr>
-<?php         for($j=0; $j< 4; $j++) { ?>
-<td><?php echo $w_symbols; ?></td><td><?php echo $w_picture;?></td><td><?php echo $w_favor_smile ;?></td>
-<?php
+
+        .fav a {
+            color: green;
+        }
+
+        .nofav {
+            color: red;
+            text-align: center;
+        }
+
+        .nofav a {
+            color: red;
+        }
+
+        img {
+            border: 0 !important;
+        }
+
+        th {
+            text-align: left;
+            font-size: 12px;
+        }
+
+        #smTbl {
+        }
+
+        #smTbl td {
+            border-bottom: 1px solid #000;
+        }
+
+        #smTbl th {
+            border-bottom: 1px solid #000;
+        }
+    </style>
+
+<?
+if ($DISPLAY == 'frame'): ?>
+    <script type="text/javascript">
+        function addSmile(code) {
+            if (window.top != null && window.top.frames['voc_sender'] != null) {
+                window.top.frames['voc_sender'].addPic(code);
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+
+    <div style="text-align:center;">
+        <?
+        if (count($smiles)): ?>
+            <?
+            foreach ($smiles as $k => $smile): ?>
+                <a href="javascript:addPic('<?= str_replace('\'', '\\\'', $smile[1]); ?>');" target="voc_sender"
+                        onclick="return addSmile('<?= str_replace('\'', '\\\'', $smile[1]); ?>');"><img
+                            src="<?= $sm_config['sm_url']; ?>converts/<?= $smile[2]; ?>" alt="<?= $smile[3]; ?>"
+                            title="<?= $smile[3]; ?>"/></a>
+            <?
+            endforeach; ?>
+        <?
+        endif; ?>
+    </div>
+    <?
+    exit; ?>
+<?
+endif; ?>
+
+    <script type="text/javascript">
+        function ReloadSmileBar() {
+            if (window.opener != null) {
+                if (window.opener.top.frames['voc_smileys'] != null) window.opener.top.frames['voc_smileys'].location.reload();
+            }
+        }
+
+        function addSmile(code) {
+            if (window.opener != null && window.opener.top != null && window.opener.top.frames['voc_sender'] != null) {
+                window.opener.top.frames['voc_sender'].addPic(code);
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function add_to_fav(id, f) {
+            if (window.XMLHttpRequest) {
+                req = new XMLHttpRequest();
+            } else if (typeof ActiveXObject != undefined) {
+                req = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            if (req) {
+                req.onreadystatechange = function () {
+                    if (req.readyState == 4) {
+                        if (req.responseText == 'OK') {
+                            document.getElementById('sm' + id).className = 'fav';
+                            document.getElementById('sm' + id).innerHTML = '<span><?=$w_favor_yes;?></span><br /><a href="#" onclick="remove_from_fav(' + id + ', \'' + f + '\'); return false;"><?=$w_favor_rem;?></a>';
+                            ReloadSmileBar();
+                        } else if (req.responseText == 'MAX_EXCEEDED') {
+                            alert('<?=$w_max_smiles_is;?><?=intval($sm_config['max_total']);?>');
+                        } else {
+                            alert(req.responseText);
+                        }
+                    }
                 }
-echo "</tr>";
-
-if($page == "") $page = 0;
-
-
-for ($i=0;$i<LINES_PER_PAGE;$i++) {
-        echo "<tr>";
-        for($j=0; $j< SMILEYS_PER_LINE; $j++) {
-            if(($page*(LINES_PER_PAGE*SMILEYS_PER_LINE)+$i*SMILEYS_PER_LINE+ $j) >= count($pic_phrases)) break;
-                  echo "<td>".$pic_phrases[$page*(LINES_PER_PAGE*SMILEYS_PER_LINE)+$i*SMILEYS_PER_LINE+ $j]."</td><td><a href=\"javascript:addPic('".$pic_phrases[$page*(LINES_PER_PAGE*SMILEYS_PER_LINE)+$i*SMILEYS_PER_LINE+ $j]."');\" target=\"voc_sender\">".$pic_urls[$page*(LINES_PER_PAGE*SMILEYS_PER_LINE)+$i*SMILEYS_PER_LINE+ $j]."</a></td><td align=CENTER ";
-
-         $IsSystem = 0;
-         for($sm_i = 0; $sm_i < count($SysSmTbl); $sm_i++) {
-                        if($SysSmTbl[$sm_i]["name"] == $pic_phrases[$page*(LINES_PER_PAGE*SMILEYS_PER_LINE)+$i*SMILEYS_PER_LINE+ $j]) {
-                          echo "bgcolor=\"#FFCCCC\"><b>$w_system_smile</b>";
-              $IsSystem = 1;
-              break;
+                url = '<?=$chat_url;?>pictures.php?session=<?=$session;?>&add=' + f;
+                req.open('POST', url, true);
+                req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=windows-1251');
+                req.send('');
+            } else {
+                alert('Your browser is not supported!');
+                return false;
             }
-          }
+        }
 
-     if(!$IsSystem) {
-         $IsFound = 0;
-         for($sm_i = 0; $sm_i < count($SmTbl); $sm_i++) {
-                        if($SmTbl[$sm_i]["name"] == $pic_phrases[$page*(LINES_PER_PAGE*SMILEYS_PER_LINE)+$i*SMILEYS_PER_LINE+ $j]) {
-                          echo "bgcolor=\"#FAFAFA\"><b>$w_favor_yes</b><br>(<a href='../../pictures.php?action=unset_common&page=$page&session=$session&com_sm_name=".$pic_phrases[$page*(LINES_PER_PAGE*SMILEYS_PER_LINE)+$i*SMILEYS_PER_LINE+ $j]."'>$w_favor_rem</a>)";
-              $IsFound = 1; break;
+        function remove_from_fav(id, f) {
+            if (window.XMLHttpRequest) {
+                req = new XMLHttpRequest();
+            } else if (typeof ActiveXObject != undefined) {
+                req = new ActiveXObject("Microsoft.XMLHTTP");
             }
-          }
+            if (req) {
+                req.onreadystatechange = function () {
+                    if (req.readyState == 4) {
+                        if (req.responseText == 'OK') {
+                            document.getElementById('sm' + id).className = 'nofav';
+                            document.getElementById('sm' + id).innerHTML = '<span><?=$w_favor_no;?></span><br /><a href="#" onclick="add_to_fav(' + id + ', \'' + f + '\'); return false;"><?=$w_favor_add;?></a>';
+                            ReloadSmileBar();
+                        } else {
+                            alert(req.responseText);
+                        }
+                    }
+                }
+                url = '<?=$chat_url;?>pictures.php?session=<?=$session;?>&del=' + f;
+                req.open('POST', url, true);
+                req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=windows-1251');
+                req.send('');
+            } else {
+                alert('Your browser is not supported!');
+                return false;
+            }
+        }
+    </script>
 
-         if(!$IsFound) {
-              echo ">$w_favor_no<br>(<a href='".$chat_url."pictures.php?action=make_common&session=$session&page=$page&com_sm_name=".$pic_phrases[$page*(LINES_PER_PAGE*SMILEYS_PER_LINE)+$i*SMILEYS_PER_LINE+ $j]."'>$w_favor_add</a>)";
-         }
-     }
-         echo "</td>";
-    }
-           echo "</tr>\n";
-}
-?>
-</table>
-<div align=CENTER>
+    <div style="padding:10px;">
+        <table border="0" width="100%">
+            <tr>
+                <td valign="top" width="180">
+                    <?
+                    foreach ($categories as $k => $v): ?>
+                        <a href="<?= $chat_url; ?>pictures.php?session=<?= $session; ?>&cid=<?= $k; ?>" class="smCat<?
+                        if ($k == $CID): ?> active<?
+                        endif; ?>"><?= $v; ?></a>
+                    <?
+                    endforeach; ?>
+                    <a href="<?= $chat_url; ?>pictures.php?session=<?= $session; ?>&cid=FAV" class="favCat smCat<?
+                    if ('FAV' == $CID): ?> active<?
+                    endif; ?>"><?= $w_fav_smiles; ?></a>
+                </td>
+
+                <td valign="top">
+                    <?
+                    if (count($smiles)): ?>
+                        <?
+                        if ($pages): ?>
+                            <?
+                            for ($i = 0; $i < $pages; $i++): ?>
+                                <a href="<?= $chat_url; ?>pictures.php?session=<?= $session; ?>&cid=<?= $CID; ?>&page=<?= $i; ?>"<?
+                                if ($i == $PAGE): ?> style="font-weight:bold;"<?
+                                endif; ?>>[<?= $i + 1; ?>]</a>
+                            <?
+                            endfor; ?>
+                        <?
+                        endif; ?>
+                        <table border="0" cellspacing="1" cellpadding="4" id="smTbl">
+                            <tr>
+                                <th><?= $w_symbols; ?></th>
+                                <th><?= $w_picture; ?></th>
+                                <th><?= $w_favor_smile; ?></th>
+                            </tr>
+                            <?
+                            foreach ($smiles as $k => $smile): ?>
+                                <tr>
+                                    <td><?= $smile[1]; ?></td>
+                                    <td align="center"><a href="javascript:addPic('<?= str_replace(
+                                            '\'',
+                                            '\\\'',
+                                            $smile[1]
+                                        ); ?>');" target="voc_sender" onclick="return addSmile('<?= str_replace(
+                                            '\'',
+                                            '\\\'',
+                                            $smile[1]
+                                        ); ?>');"><img src="<?= $sm_config['sm_url']; ?>converts/<?= $smile[2]; ?>"
+                                                    alt="<?= $smile[3]; ?>" title="<?= $smile[3]; ?>"/></a></td>
+                                    <td class="<?= (in_array($smile[2], $favorites)) ? 'fav' : 'nofav'; ?>"
+                                            id="sm<?= $k; ?>">
+                                        <?
+                                        if (in_array($smile[2], $favorites)): ?>
+                                            <span><?= $w_favor_yes; ?></span><br/>
+                                            <a href="#" onclick="remove_from_fav(<?= $k; ?>, '<?= str_replace(
+                                                '\'',
+                                                '\\\'',
+                                                $smile[2]
+                                            ); ?>'); return false;"><?= $w_favor_rem; ?></a>
+                                        <?
+                                        else: ?>
+                                            <span><?= $w_favor_no; ?></span><br/>
+                                            <a href="#" onclick="add_to_fav(<?= $k; ?>, '<?= str_replace(
+                                                '\'',
+                                                '\\\'',
+                                                $smile[2]
+                                            ); ?>'); return false;"><?= $w_favor_add; ?></a>
+                                        <?
+                                        endif; ?>
+                                    </td>
+                                </tr>
+                            <?
+                            endforeach; ?>
+                        </table>
+                        <?
+                        if ($pages): ?>
+                            <?
+                            for ($i = 0; $i < $pages; $i++): ?>
+                                <a href="<?= $chat_url; ?>pictures.php?session=<?= $session; ?>&cid=<?= $CID; ?>&page=<?= $i; ?>"<?
+                                if ($i == $PAGE): ?> style="font-weight:bold;"<?
+                                endif; ?>>[<?= $i + 1; ?>]</a>
+                            <?
+                            endfor; ?>
+                        <?
+                        endif; ?>
+                    <?
+                    else: ?>
+                        <div style="color:red; font-weight:bold;"><?= $w_no_smiles_in_category; ?></div>
+                    <?
+                    endif; ?>
+                </td>
+            </tr>
+        </table>
+    </div>
+
 <?php
-     $MaxPages = floor(count($pic_phrases)/(LINES_PER_PAGE*SMILEYS_PER_LINE))+0.5;
-     for($i = 0; $i < $MaxPages; $i++) {
-             if($i == $page) {
-                echo " <b>[".($i+1)."]</b> ";
-        }
-        else {
-                   echo " [<a href='".$chat_url."pictures.php?action=make_common&session=$session&page=$i'>".($i+1)."</a>] ";
-        }
-     }
-?>
-</div>
-<?php include($file_path."designes/".$design."/common_body_end.php");?>
+include($file_path."designes/".$design."/common_body_end.php"); ?>

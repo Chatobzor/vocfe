@@ -48,8 +48,7 @@ if (!defined("_COMMON_")) {
         -->
     </style>
 </head>
-<body bgcolor="#ffb900" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" background="<?php
-echo $current_design; ?>img/top_green_menu.jpg">
+<body bgcolor="#ffb900" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" background="<?php
 echo $current_design; ?>grunge/grunge_02.gif">
     <tr align="center">
@@ -113,7 +112,7 @@ echo $current_design; ?>grunge/grunge_02.gif">
         } ?>
         <td width="10%"><b><a href="logout.php?session=<?php
                 echo $session; ?>" target="_parent"><font color=white><?php
-                        echo ucfirst(Выход); ?></font></a></b></td>
+                        echo ucfirst('Выход'); ?></font></a></b></td>
     </tr>
 </table>
 </body>

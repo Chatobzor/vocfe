@@ -100,7 +100,7 @@ function addPic(picName)
 }
 
 function underConst() {
-        alert('Эта штука еще в разработке! Руками не трогать! :-)');
+        alert('пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ! :-)');
 }
 
 
@@ -187,7 +187,7 @@ function turnoff(imgName)
 //-->
 </script>
 </head>
-<body <?php if ($opcode=="popup") { ?>onLoad="document.forms[0].whisper.value=parent.WhisperWith;" <?php } ?> bgcolor=#BCD560 leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" background="./img/down_buttons_menu.jpg">
+<body <?php if ($opcode=="popup") { ?>onLoad="document.forms[0].whisper.value=parent.WhisperWith;" <?php } ?> bgcolor=#BCD560 leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
 <!--
 // Get the position for the help popup
@@ -219,8 +219,8 @@ function sendPrivateMsg() {
 
 function msgdecode()
 {
-        var strTable1="qwertyuiop[]asdfghjklzxcvbnm,.QWERTYUIOP{}ASDFGHJKL:ZXCVBNM<>йцукенгшщзхъфывапролдячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЯЧСМИТЬБЮ'\";эЭж";
-        var strTable2="йцукенгшщзхъфывапролдячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЯЧСМИТЬБЮqwertyuiop[]asdfghjklzxcvbnm,.QWERTYUIOP{}ASDFGHJKL:ZXCVBNM<>эЭж'\";";
+        var strTable1="qwertyuiop[]asdfghjklzxcvbnm,.QWERTYUIOP{}ASDFGHJKL:ZXCVBNM<>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'\";пїЅпїЅпїЅ";
+        var strTable2="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅqwertyuiop[]asdfghjklzxcvbnm,.QWERTYUIOP{}ASDFGHJKL:ZXCVBNM<>пїЅпїЅпїЅ'\";";
         var strRet = "";
         var strSrc = document.forms[0].mesg.value;
         var cTmp, nTmp;

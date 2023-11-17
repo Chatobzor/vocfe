@@ -207,7 +207,6 @@ if (!defined("_COMMON_")):
     }
     $current_design = $chat_url."designes/".$design."/";
 
-
 #setting necessary variables
     $daemon_url = $daemon_host.":".$daemon_port."/";
     $engine_path = DATA_PATH."engine/".$engine."/";

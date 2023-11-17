@@ -5,30 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e4f2d97-2c9d-4f42-b316-9baa04276c74" name="Changes" comment="New Admin refactoring.">
-      <change afterPath="$PROJECT_DIR$/admin/admins.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/settings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin_users.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/check_session.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/check_session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/export.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/export.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/questions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/questions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/randomize.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/randomize.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/stat.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/stat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz/modules/zerolize.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz/modules/zerolize.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/quiz_question_manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/quiz_question_manage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/php_migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/php_migration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/quiz/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/quiz/engine.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/engine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/quiz/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/quiz/randomizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz/randomizer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voc.conf" beforeDir="false" afterPath="$PROJECT_DIR$/data/voc.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz.php" beforeDir="false" afterPath="$PROJECT_DIR$/quiz.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz_top_export.php" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_top_export.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz_tops.php" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_tops.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/smileys.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/smileys.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/engine/files/voc.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/engine/files/voc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/common_body_start.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/common_body_start.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/common_title.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/common_title.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/grunge/gradient.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/grunge/grunge_06.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/img/bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/img/down_buttons_menu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/img/fun.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/img/ico_icq_club.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/img/top_green_menu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/img/userlist_orange.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/navibar.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/navibar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/pictures.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/pictures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/remote_rbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/remote_rbs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/sender_visible.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/sender_visible.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/smileys.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/smileys.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designes/rozmova4/voc.php" beforeDir="false" afterPath="$PROJECT_DIR$/designes/rozmova4/voc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc_common.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_common.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc_user_class.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc_user_class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures.php" beforeDir="false" afterPath="$PROJECT_DIR$/pictures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voc.php" beforeDir="false" afterPath="$PROJECT_DIR$/voc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/procoders/projects/own/voc/VOCFE/admin",
+    "last_opened_file_path": "/Users/procoders/projects/own/voc/VOCFE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,11 +77,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/designes/rozmova4" />
       <recent name="$PROJECT_DIR$/admin" />
       <recent name="$PROJECT_DIR$/admin/new_admin" />
       <recent name="$PROJECT_DIR$/core" />
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/admin" />
@@ -100,6 +99,10 @@
       <workItem from="1699886790780" duration="630000" />
       <workItem from="1699887424147" duration="600000" />
       <workItem from="1699888038888" duration="14908000" />
+      <workItem from="1699904889938" duration="602000" />
+      <workItem from="1699905976912" duration="23000" />
+      <workItem from="1699980406813" duration="1468000" />
+      <workItem from="1700237000095" duration="3907000" />
     </task>
     <task id="LOCAL-00001" summary="Init dicker">
       <option name="closed" value="true" />
@@ -213,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699900485570</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="New Admin refactoring.">
+      <option name="closed" value="true" />
+      <created>1699904892728</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699904892728</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
